@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.SqlServer.ServiceBrokerEnum</name>
+	</assembly>
+	<members>
+		<member name="T:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState" /> 枚举包含用来指定服务中的端点状态的常量值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.ClosedWait">
+			<summary>端点已关闭，正在等待重播超时过期。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.ClosingWait">
+			<summary>端点已关闭，无法运行。它正在等待对方端点关闭。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.Disabled">
+			<summary>端点已被禁用。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.ErrorWait">
+			<summary>端点已声明错误，正在等待来自对方端点的响应。 </summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.Open">
+			<summary>对话处于打开状态且正常通信。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.OpenWait">
+			<summary>已创建端点。它正在等待来自对方端点的响应。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Smo.Broker.DialogType">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Smo.Broker.DialogType" /> 枚举包含用来指定 Service Broker 端点之间的对话类型的常量值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogType.MonologPublish">
+			<summary>
+        标识为仅供参考。不提供支持。不保证以后的兼容性。
+      </summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogType.MonologReceive">
+			<summary>
+        标识为仅供参考。不提供支持。不保证以后的兼容性。
+      </summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogType.Regular2Way">
+			<summary>常规双向对话。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Smo.Broker.MessageSource">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Smo.Broker.MessageSource" /> 枚举包含用来指定哪个端点发送了消息的常量值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageSource.Initiator">
+			<summary>指定消息是由对话发起方端点发送的。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageSource.InitiatorAndTarget">
+			<summary>指定消息是由发起方端点或目标端点发送的。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageSource.Target">
+			<summary>指定消息是由目标端点发送的。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation" /> 枚举包含的常量值用于指定对 Service Broker 消息正文执行的验证类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.Empty">
+			<summary>对于此消息类型，消息正文必须为 NULL。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.None">
+			<summary>不执行验证。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.Xml">
+			<summary>消息正文必须包含格式正确的 XML 数据。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.XmlSchemaCollection">
+			<summary>消息正文包含的 XML 必须通过了为消息类型指定的 XML 架构集合执行的验证。</summary>
+		</member>
+	</members>
+</doc>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BCFBF52-ECF2-4895-8716-2BF8B68651E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZB.Framework.Utility</RootNamespace>
+    <AssemblyName>ZB.Framework.Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\Libs\OpenCV\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Libs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmountHelper.cs" />
+    <Compile Include="ApplyDataContractResolverAttribute.cs" />
+    <Compile Include="CollectionExtend\ArrayHelper.cs" />
+    <Compile Include="CollectionExtend\HashSetExtend.cs" />
+    <Compile Include="CollectionExtend\IDictionaryExtend.cs" />
+    <Compile Include="CollectionExtend\IListExtend.cs" />
+    <Compile Include="CollectionExtend\ObservableCollectionExtend.cs" />
+    <Compile Include="DateTime\DateTimeConvert.cs" />
+    <Compile Include="DateTime\DateTimeHelper.cs" />
+    <Compile Include="DateTime\DateTimeParseHelper.cs" />
+    <Compile Include="DebugHelper.cs" />
+    <Compile Include="DecimalHelper.cs" />
+    <Compile Include="DocConvert\EDocTransformAttribute.cs" />
+    <Compile Include="EnumExtensions.cs" />
+    <Compile Include="ExceptionHelper.cs" />
+    <Compile Include="ExpressionHelper.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="FileIconHelper.cs" />
+    <Compile Include="FileSerializeHelper.cs" />
+    <Compile Include="GenericHelper.cs" />
+    <Compile Include="HttpUploadHandlerBase.cs" />
+    <Compile Include="HttpUtility.cs" />
+    <Compile Include="ImageCompressor.cs" />
+    <Compile Include="InvokeErrorResult.cs" />
+    <Compile Include="ZBEncryptHelper.cs" />
+    <Compile Include="ZBImageEncryptHelper.cs" />
+    <Compile Include="ZBMutexHelper.cs" />
+    <Compile Include="ZBObjectCache.cs" />
+    <Compile Include="ZBSecurity\ZBSecurityBase.cs" />
+    <Compile Include="ZBSecurity\ZBSecurityFactory.cs" />
+    <Compile Include="ZBSecurity\ZBSecurityHelper.cs" />
+    <Compile Include="ZBSecurity\ZBSecurityHelper2.cs" />
+    <Compile Include="ZBSecurity\ZBSecurity_1.cs" />
+    <Compile Include="Md5Helper.cs" />
+    <Compile Include="MoneyHelper.cs" />
+    <Compile Include="ObjectBase\DataEntry.cs" />
+    <Compile Include="ObjectBase\NotifyBase.cs" />
+    <Compile Include="ObjectClone\IObjectClone.cs" />
+    <Compile Include="ObjectClone\ObjectCloneExtend.cs" />
+    <Compile Include="OpenCV\FaceDetector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomHelper\ZBRandomer.cs" />
+    <Compile Include="RandomHelper\RandomHelper.cs" />
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="Rtf\RichTextBoxInsertImageHelper.cs" />
+    <Compile Include="Rtf\RtfHelper.cs" />
+    <Compile Include="SerializeHelper\SerializeHelper.cs" />
+    <Compile Include="SerializeHelper\SerializeHelper.Extent.cs" />
+    <Compile Include="SerializeHelper\SerializeHelper.Extent2.cs" />
+    <Compile Include="SingleAppMutex.cs" />
+    <Compile Include="SmartObjectSerialize\SmartObjectDeserializer.cs" />
+    <Compile Include="SmartObjectSerialize\SmartObjectSerializer.cs" />
+    <Compile Include="SmartObjectSerialize\SmartSerializeHelper.cs" />
+    <Compile Include="SqlCommon.cs" />
+    <Compile Include="StringExtend\ChinesePinYin.cs" />
+    <Compile Include="StringExtend\StringExtend.ChineseNO.cs" />
+    <Compile Include="StringExtend\StringExtend.cs" />
+    <Compile Include="StringExtend\StringExtend.Roman.cs" />
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="TimeEstimation.cs" />
+    <Compile Include="TimeHelper.cs" />
+    <Compile Include="TimeRangeHelper\TimeRange.cs" />
+    <Compile Include="TimeRangeHelper\WorkRange.cs" />
+    <Compile Include="TupleEx.cs" />
+    <Compile Include="WCFExtend\HttpFaultBehavior.cs" />
+    <Compile Include="WCFExtend\HttpFaultMessageInspector.cs" />
+    <Compile Include="WCFExtend\SvcServiceHostFactory.cs" />
+    <Compile Include="WCFExtend\WcfBehaviorAttributeBase.cs" />
+    <Compile Include="WCFExtend\WcfErrorBehavior.cs" />
+    <Compile Include="WCFExtend\WcfErrorBehaviorAttribute.cs" />
+    <Compile Include="WCFExtend\WcfSilverlightFaultBehavior.cs" />
+    <Compile Include="WCFExtend\WcfSilverlightFaultBehaviorAttribute.cs" />
+    <Compile Include="ZBSafety\CustomerInfo.cs" />
+    <Compile Include="ZBSafety\ZBSafetyBase.cs" />
+    <Compile Include="ZBSafety\ZBSafetyFactory.cs" />
+    <Compile Include="ZBSafety\ZBSecrecyObjBase.cs" />
+    <Compile Include="ZBSafety\Rockey2\ZBRockey2Safety.cs" />
+    <Compile Include="ZBSafety\Rockey2\Rockey2Helper.cs" />
+    <Compile Include="ZBSafety\RockeyArm\DongelDef.cs" />
+    <Compile Include="ZBSafety\RockeyArm\ZBCertRockeyArm.cs" />
+    <Compile Include="ZBSafety\RockeyArm\ZBPQEXRockeyArm.cs" />
+    <Compile Include="ZBSafety\RockeyArm\ZBPQRockeyArm.cs" />
+    <Compile Include="ZBSafety\RockeyArm\ZBRockeyArmSafety.cs" />
+    <Compile Include="ZBSafety\RockeyArm\RockeyArmHelper.cs" />
+    <Compile Include="Zip\GZipHelper.cs" />
+    <Compile Include="Zip\SharpZipHelper.cs" />
+    <Compile Include="Zip\SharpZipHelper.FileZip.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

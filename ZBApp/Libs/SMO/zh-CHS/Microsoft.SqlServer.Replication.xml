@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.SqlServer.Replication</name>
+	</assembly>
+	<members>
+		<member name="N:Microsoft.SqlServer.Replication">
+			<summary>此程序集提供对复制代理功能的托管访问。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.AbortPolicy">
+			<summary>枚举在发生意外关机时用于终止正在运行的复制代理线程的方法的选项。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.AbortPolicy.Asynchronous">
+			<summary>启动关机的代理线程可能会主动中止其他正在运行的代理线程。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.AbortPolicy.Synchronous">
+			<summary>代理线程仅在关闭正在进行中之后明确定义的位置（例如查询执行和消息记录之前或之后）终止。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.AgentCore">
+			<summary>实现用于托管的复制代理的核心功能。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.AgentCore.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.AgentCore" /> 类的实例。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Replication.AgentCore.Status">
+			<summary>在正在运行的代理返回状态信息时发生。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.AbortPolicy">
+			<summary>获取或设置在发生意外关机时用于终止正在运行的复制代理线程的方法。</summary>
+			<returns>An <see cref="T:Microsoft.SqlServer.Replication.AbortPolicy" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.ComErrorCollection">
+			<summary>返回在代理执行期间发生的错误的有关信息。</summary>
+			<returns>An instance of the <see cref="T:System.Collections.IEnumerable" /> interface.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.HistoryVerboseLevel">
+			<summary>获取或设置在代理执行期间记录的历史记录数量。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that can be one of the following:ValueDescription1Always update a previous history message of the same status (startup, progress, success, and so on). If no previous record with the same status exists, insert a new record.2 (default)Insert new history records unless the record is for such things as idle messages or long-running job messages, in which case update the previous records.3Always insert new records, unless it is for idle messages.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.LoginTimeout">
+			<summary>获取或设置经过多少秒后对于代理进行的连接该登录将超时。</summary>
+			<returns>An <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.Output">
+			<summary>获取或设置代理输出文件的名称和路径。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the file name with an optional file path.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.OutputVerboseLevel">
+			<summary>获取或设置写入代理输出文件的信息的详细程度。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that can be one of the following:ValueDescription0Only error messages are logged.1 (default)All progress report messages are logged.2All progress report messages and error messages are logged.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.ProfileName">
+			<summary>获取或设置运行代理时要使用的代理配置文件。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.PublisherFailoverPartner">
+			<summary>获取或设置参加与发布数据库进行的数据库镜像会话的 SQL Server 故障转移伙伴实例。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AgentCore.QueryTimeout">
+			<summary>获取或设置查询超时之前等待的秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.AgentCore.StatusEventHandler">
+			<summary>处理在代理执行过程中引发的 Status 事件的委托。</summary>
+			<param name="sender">The source of the status event.</param>
+			<param name="e">A <see cref="T:Microsoft.SqlServer.Replication.StatusEventArgs" /> object that contains the event data.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner">
+			<summary>表示在主发布服务器不可用时订阅可以同步的备用发布服务器。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner" /> 类的实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.#ctor(System.String,System.String,System.String,System.String,System.String)">
+			<summary>使用所需的所有属性创建 <see cref="T:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner" /> 类的实例。</summary>
+			<param name="publisher">Name of the alternate Publisher.</param>
+			<param name="publisherDatabase">Name of the publication database.</param>
+			<param name="publication">Name of the publication.</param>
+			<param name="distributor">Name of the Distributor.</param>
+			<param name="friendlyName">Friendly name for the association of Publisher, publication, and Distributor that makes up an alternate synchronization partner. </param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.Distributor">
+			<summary>分发服务器的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.FriendlyName">
+			<summary>构成备用同步伙伴的发布服务器、发布和分发服务器的关联的友好名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.Publication">
+			<summary>发布名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.Publisher">
+			<summary>备用发布服务器的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner.PublisherDatabase">
+			<summary>发布数据库的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ComErrorException">
+			<summary>在复制代理引发一般错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Replication.ComErrorException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorException.#ctor(System.String)">
+			<summary>使用指定的错误消息初始化 <see cref="T:Microsoft.SqlServer.Replication.ComErrorException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用初始化 <see cref="T:Microsoft.SqlServer.Replication.ComErrorException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorException.#ctor(System.Int32,System.String,System.Int32,System.String,System.String,System.Guid,System.String)">
+			<param name="comHResult">The error code (HRESULT) value associated with this exception.</param>
+			<param name="description">Description of the error.</param>
+			<param name="helpContext">The context of a topic in a Help file.</param>
+			<param name="helpFile">The fully qualified path to a Help file.</param>
+			<param name="source">The name of the source of the error.</param>
+			<param name="interfaceId">The identifier of the COM interface that is the source of the error. </param>
+			<param name="errorMessage">The error message string.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用有关异常的信息设置指定的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.ComHResult">
+			<summary>与此异常关联的错误代码 (HRESULT) 值。</summary>
+			<returns>An <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.Description">
+			<summary>错误的说明。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.ErrorMessage">
+			<summary>错误消息字符串。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.HelpContext">
+			<summary>帮助文件中的某一主题的上下文。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.HelpFile">
+			<summary>帮助文件的完全限定的路径。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.InterfaceId">
+			<summary>作为错误来源的 COM 接口的标识符。</summary>
+			<returns>A <see cref="T:System.Guid" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorException.Source">
+			<summary>作为错误来源的对象或应用程序的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ComErrorRecord">
+			<summary>表示由复制代理生成的错误的有关信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorRecord.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.ComErrorRecord" /> 类的实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ComErrorRecord.#ctor(System.String,System.String,System.Int32)">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.ComErrorRecord" /> 类的实例和错误的设置属性。</summary>
+			<param name="sourceType">Value that identifies the source of the error.</param>
+			<param name="description">Description of the error.</param>
+			<param name="errorNumber">Numeric error code.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorRecord.Description">
+			<summary>错误的说明。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorRecord.ErrorNumber">
+			<summary>数字错误代码。</summary>
+			<returns>An <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ComErrorRecord.SourceType">
+			<summary>标识错误来源的值。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ConnectionFailureException">
+			<summary>在复制代理正在运行时因数据库连接失败引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ConnectionFailureException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Replication.ConnectionFailureException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ConnectionFailureException.#ctor(System.String)">
+			<summary>使用指定的错误消息初始化 <see cref="T:Microsoft.SqlServer.Replication.ConnectionFailureException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ConnectionFailureException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据初始化 <see cref="T:Microsoft.SqlServer.Replication.ConnectionFailureException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ConnectionFailureException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用初始化 <see cref="T:Microsoft.SqlServer.Replication.ConnectionFailureException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="inne rException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.DataSourceType">
+			<summary>枚举作为复制订阅服务器支持的数据源。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.DB2Universal">
+			<summary>DB2 通用数据库订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.Exchange">
+			<summary>
+        Microsoft Exchange 订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.Jet4Database">
+			<summary>
+        Microsoft Jet 4.0 (Access) 数据库订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.OdbcDsn">
+			<summary>ODBC 数据源订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.OleDBDataSource">
+			<summary>OLE DB 数据源订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.Oracle">
+			<summary>Oracle 数据库订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.SqlServer">
+			<summary>Microsoft SQL Server 订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.SqlServerCE">
+			<summary>Microsoft SQL Server Compact 订阅服务器</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DataSourceType.XmlDataSource">
+			<summary>XML 数据源订阅服务器</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.DeadlockPriority">
+			<summary>枚举用于解决在快照生成过程中出现的死锁问题的优先级。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Eight">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Five">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Four">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.High">
+			<summary>指定如果死锁链中涉及的其他会话的死锁优先级设置为大于 5 的整数值，则当前会话将成为死锁牺牲品，或者如果其他会话的死锁优先级设置为 HIGH 或 5，则当前会话可能成为死锁牺牲品。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Low">
+			<summary>指定如果当前会话发生死锁，并且死锁链中涉及的其他会话的死锁优先级设置为 NORMAL 或 HIGH 或大于 -5 的整数值，则当前会话将成为死锁牺牲品。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusEight">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusFive">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusFour">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusNine">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusOne">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusSeven">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusSix">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusTen">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusThree">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.MinusTwo">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Nine">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Normal">
+			<summary>指定如果死锁链中涉及的其他会话的死锁优先级设置为 HIGH 或大于 0 的整数值，则当前会话将成为死锁牺牲品，但如果其他会话的死锁优先级设置为 LOW 或小于 0 的整数值，则当前会话将不会成为死锁牺牲品。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.One">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Seven">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Six">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Ten">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Three">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Two">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.DeadlockPriority.Zero">
+			<summary>请参阅“备注”部分。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.FciException">
+			<summary>在文件压缩接口 (FCI) 中发生错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.FciException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.FciException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.FciException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.FciException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.FciException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据创建 <see cref="T:Microsoft.SqlServer.Replication.FciException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.FciException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用初始化 <see cref="T:Microsoft.SqlServer.Replication.FciException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.FileTransferOption">
+			<summary>枚举用于获取快照文件的选项。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.FileTransferOption.Ftp">
+			<summary>使用 FTP 下载快照文件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.FileTransferOption.Unc">
+			<summary>从通用命名约定 (UNC) 网络共享访问快照文件。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.IAlternateSynchronizationPartner">
+			<summary>为后期绑定 COM 客户端提供 <see cref="T:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner" /> 类的一个实现。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.IComErrorRecord">
+			<summary>为后期绑定 COM 客户端提供 <see cref="T:Microsoft.SqlServer.Replication.ComErrorRecord" /> 类的一个实现。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.IMergeSynchronizationAgent">
+			<summary>为后期绑定 COM 客户端提供 <see cref="T:Microsoft.SqlServer.Replication.MergeSynchronizationAgent" /> 类的一个实现。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ISnapshotGenerationAgent">
+			<summary>为后期绑定 COM 客户端提供 <see cref="T:Microsoft.SqlServer.Replication.SnapshotGenerationAgent" /> 类的一个实现。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ITransSynchronizationAgent">
+			<summary>为后期绑定 COM 客户端提供 <see cref="T:Microsoft.SqlServer.Replication.TransSynchronizationAgent" /> 类的一个实现。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.MergeExchangeType">
+			<summary>枚举合并代理如何同步数据的选项。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MergeExchangeType.Bidirectional">
+			<summary>更改从发布服务器下载并且从订阅服务器上载（默认值）。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MergeExchangeType.Download">
+			<summary>仅下载发布服务器更改。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MergeExchangeType.None">
+			<summary>未指定交换类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MergeExchangeType.Upload">
+			<summary>仅上载订阅服务器更改。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.MergeSynchronizationAgent">
+			<summary>提供复制合并代理的功能。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.MergeSynchronizationAgent" /> 类的实例。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Status">
+			<summary>在合并代理返回同步状态信息时发生。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.IsSnapshotRequired">
+			<summary>连接到发布服务器或分发服务器和订阅服务器以便确定在下一个代理同步过程中是否将应用新快照。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that indicates whether a new snapshot will be applied. </returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Synchronize">
+			<summary>启动合并代理以便同步订阅。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.AlternateSynchronizationPartnerCollection">
+			<summary>获取订阅的备用同步伙伴。</summary>
+			<returns>A collection of <see cref="T:Microsoft.SqlServer.Replication.AlternateSynchronizationPartner" /> objects.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.AltSnapshotFolder">
+			<summary>获取或设置订阅的备用快照文件夹。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the path of the alternate snapshot folder.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.ComErrorCollection">
+			<summary>获取复制代理生成的错误的集合。</summary>
+			<returns>A <see cref="T:System.Collections.IEnumerable" /> collection of <see cref="T:Microsoft.SqlServer.Replication.ComErrorRecord" /> objects.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Distributor">
+			<summary>获取或设置充当订阅的分发服务器的 Microsoft SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name of the Distributor.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DistributorAddress">
+			<summary>获取或设置在指定 <see cref="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DistributorNetwork" /> 属性时用于连接到分发服务器的网络地址。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the Distributor address.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DistributorLogin">
+			<summary>获取或设置通过使用 SQL Server 身份验证连接到分发服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DistributorNetwork">
+			<summary>获取或设置在连接到分发服务器时使用的客户端网络库。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.NetworkType" /> value that indicates the Net-Library to use.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DistributorPassword">
+			<summary>设置通过使用 SQL Server 身份验证连接到分发服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DistributorSecurityMode">
+			<summary>获取或设置在连接到分发服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DownloadGenerationsPerBatch">
+			<summary>获取或设置将更改从发布服务器下载到订阅服务器时要在单个批次中处理的生成数。生成的定义是每个项目中属于一个逻辑组的更改。</summary>
+			<returns>The number of generations per batch.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.DynamicSnapshotLocation">
+			<summary>获取或设置此订阅服务器的分区快照的位置。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the full path of the location of the partitioned snapshot files.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.ExchangeType">
+			<summary>获取或设置在同步期间交换数据的方式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.MergeExchangeType" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.FileTransferType">
+			<summary>获取或设置初始快照文件传输到订阅服务器的方式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.FileTransferOption" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.HostName">
+			<summary>获取或设置在合并代理计算使用 HOST_NAME 函数的参数化筛选器时使用的值。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetLogin">
+			<summary>获取或设置在通过使用 Internet 身份验证连接到发布服务器时用于 Web 同步的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetPassword">
+			<summary>为在通过使用 Internet 身份验证连接到发布服务器时用于 Web 同步的 <see cref="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetLogin" /> 属性设置密码。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetProxyLogin">
+			<summary>获取或设置在通过使用 Internet 代理服务器连接到 Web 服务器时用于 Web 同步的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetProxyPassword">
+			<summary>设置在通过使用 Internet 代理服务器连接到 Web 服务器时用于 Web 同步的登录密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetProxyServer">
+			<summary>获取或设置在连接到 Web 服务器时用于 Web 同步的 Internet 代理服务器的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name of the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetSecurityMode">
+			<summary>获取或设置在 Web 同步过程中连接到 Web 服务器时使用的 HTTP 身份验证方法。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetTimeout">
+			<summary>获取或设置连接到 Web 服务器时的 HTTP 超时。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.InternetUrl">
+			<summary>获取或设置为 Web 同步配置的 Web 服务的 URL。</summary>
+			<returns>A <see cref="T:System.String" /> value that is a valid URL.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.LastUpdatedTime">
+			<summary>获取复制代理上次同步订阅的时间的时间戳。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents a date and time.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.LoginTimeout">
+			<summary>获取或设置等待建立连接的最大秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that represents a maximum time, in seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.MetadataRetentionCleanup">
+			<summary>获取或设置是否清除元数据。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Output">
+			<summary>获取或设置代理输出文件。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name and full path of the output file.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.OutputVerboseLevel">
+			<summary>获取或设置写入代理输出文件的信息的详细程度。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that can be one of the following values.ValueDescription0Only error messages are logged.1All progress report messages are logged.2All progress report messages and error messages are logged.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.ProfileName">
+			<summary>获取或设置代理使用的配置文件的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name of the profile.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Publication">
+			<summary>获取或设置发布的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Publisher">
+			<summary>获取或设置作为订阅的发布服务器的 Microsoft SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherAddress">
+			<summary>获取或设置在指定 <see cref="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherNetwork" /> 属性时用于连接到发布服务器的网络地址。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the address of the Publisher.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherChanges">
+			<summary>获取在上次同步期间在订阅服务器上应用的发布服务器更改的总数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherConflicts">
+			<summary>获取在上次同步期间在发布服务器上发生的冲突的总数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherDatabase">
+			<summary>获取或设置发布数据库的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherFailoverPartner">
+			<summary>获取或设置参加与发布数据库进行的数据库镜像会话的 SQL Server 故障转移伙伴实例。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherLogin">
+			<summary>获取或设置通过使用 SQL Server 身份验证连接到发布服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherNetwork">
+			<summary>获取或设置在连接到发布服务器时使用的客户端网络库。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.NetworkType" /> value that indicates the Net-Library to use.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherPassword">
+			<summary>设置通过使用 SQL Server 身份验证连接到发布服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.PublisherSecurityMode">
+			<summary>获取或设置在连接到发布服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.QueryTimeout">
+			<summary>获取或设置允许内部查询完成的秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that represents the number of seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Subscriber">
+			<summary>获取或设置作为订阅服务器的 Microsoft SQL Server 的实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberChanges">
+			<summary>获取在上次同步期间在发布服务器上应用的订阅服务器更改的总数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberConflicts">
+			<summary>获取在上次同步期间在发布服务器上发生的冲突的总数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberDatabase">
+			<summary>获取或设置订阅数据库的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberDataSourceType">
+			<summary>获取或设置用作订阅服务器的数据源的类型。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.DataSourceType" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberLogin">
+			<summary>获取或设置通过使用 SQL Server 身份验证连接到订阅服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberPassword">
+			<summary>设置通过使用 SQL Server 身份验证连接到订阅服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriberSecurityMode">
+			<summary>获取或设置在连接到订阅服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SubscriptionType">
+			<summary>获取或设置订阅是推送订阅还是请求订阅。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SubscriptionOption" /> value that indicates the subscription type.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.SyncToAlternate">
+			<summary>获取或设置是否与备用同步伙伴保持同步。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.UploadGenerationsPerBatch">
+			<summary>获取或设置将订阅服务器上的更改上载到发布服务器时要在单个批次处理的生成数。生成的定义是每个项目中属于一个逻辑组的更改。</summary>
+			<returns>The number of generations per batch.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.UseInteractiveResolver">
+			<summary>获取或设置调解期间是否使用交互式冲突解决程序。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.UseWebSynchronization">
+			<summary>获取或设置是否使用 Web 同步。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.Validate">
+			<summary>获取或设置是否在同步结束时对订阅服务器数据执行数据验证。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.ValidateType" /> value that indicates the type of validation that will be performed.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.MergeSynchronizationAgent.WorkingDirectory">
+			<summary>获取或设置在使用 FTP 时从其访问快照文件的工作目录。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.MessageStatus">
+			<summary>枚举复制代理状态代码。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.Abort">
+			<summary>代理操作已中止。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.Fail">
+			<summary>代理操作失败。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.Idle">
+			<summary>代理正在运行并且正在等待更改。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.InProgress">
+			<summary>代理操作正在进行中。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.None">
+			<summary>无状态。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.RequestShutdownOnValidationFail">
+			<summary>代理运行了数据验证并且验证失败。代理将关闭。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.Retry">
+			<summary>代理操作失败并且正在重试。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.Start">
+			<summary>代理正在启动。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.Succeed">
+			<summary>代理操作已成功完成。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.ValidationFail">
+			<summary>代理运行了数据验证并且验证失败。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.MessageStatus.ValidationPass">
+			<summary>代理运行了数据验证并且验证成功完成。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.NativeSqlConnectionException">
+			<summary>在大容量复制操作期间在 ODBC 驱动程序或 OLEDB 访问接口引发错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.NativeSqlConnectionException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.NativeSqlConnectionException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.NativeSqlConnectionException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.NativeSqlConnectionException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.NativeSqlConnectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据创建 <see cref="T:Microsoft.SqlServer.Replication.NativeSqlConnectionException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.NativeSqlConnectionException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用创建 <see cref="T:Microsoft.SqlServer.Replication.NativeSqlConnectionException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.NativeSqlConnectionException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用有关异常的信息设置指定的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.NativeSqlConnectionException.ErrorSource">
+			<summary>错误的源。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.NativeSqlConnectionException.SqlState">
+			<summary>指示错误的 Microsoft SQL Server SQL 状态。</summary>
+			<returns>A five-character <see cref="T:System.String" /> value that follows the ANSI SQL standard and indicates the error code</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.NetworkType">
+			<summary>枚举在连接到复制服务器时复制代理使用的支持的网络库。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.NetworkType.DefaultNetwork">
+			<summary>当前配置的客户端网络库（默认值）。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.NetworkType.TcpIPSockets">
+			<summary>TCP/IP 套接字网络库。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.OciException">
+			<summary>在 Oracle 调用接口 (OCI) 引发错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OciException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.OciException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OciException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.OciException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OciException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据创建 <see cref="T:Microsoft.SqlServer.Replication.OciException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OciException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用创建 <see cref="T:Microsoft.SqlServer.Replication.OciException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.OSException">
+			<summary>在文件压缩接口 (FCI) 操作过程中操作系统引发错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OSException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.OSException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OSException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.OSException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OSException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据创建 <see cref="T:Microsoft.SqlServer.Replication.OSException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.OSException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用创建 <see cref="T:Microsoft.SqlServer.Replication.OSException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException">
+			<summary>在传递给某一参数的值超出该参数的数据类型的范围时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException.#ctor">
+			<summary>使用默认值初始化 <see cref="T:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException.#ctor(System.String)">
+			<summary>在给定消息参数时初始化 <see cref="T:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException" /> 类的新实例。</summary>
+			<param name="message">A description of the error.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>在给定信息和上下文参数时初始化 <see cref="T:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException" /> 类的新实例。</summary>
+			<param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> object to populate with data.</param>
+			<param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext" />) for this serialization.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException.#ctor(System.String,System.Exception)">
+			<summary>在给定消息和内部异常参数时初始化 <see cref="T:Microsoft.SqlServer.Replication.ParameterValueOutOfRangeException" /> 类的新实例。</summary>
+			<param name="message">A description of the error.</param>
+			<param name="innerException">A wrapped exception from an external component.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.PasswordWriteOnlyException">
+			<summary>在访问复制代理密码属性时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.PasswordWriteOnlyException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.PasswordWriteOnlyException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.PasswordWriteOnlyException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.PasswordWriteOnlyException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.PasswordWriteOnlyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据创建 <see cref="T:Microsoft.SqlServer.Replication.PasswordWriteOnlyException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.PasswordWriteOnlyException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用创建 <see cref="T:Microsoft.SqlServer.Replication.PasswordWriteOnlyException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerExc eption">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ReplicationAgentContainerException">
+			<summary>在基于托管代码的复制代理生成一个或多个错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentContainerException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentContainerException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentContainerException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentContainerException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentContainerException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentContainerException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentContainerException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用有关异常的信息设置指定的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination. </param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ReplicationAgentContainerException.ExceptionCollection">
+			<summary>获取复制代理返回的异常对象的集合。</summary>
+			<returns>An <see cref="T:System.Collections.ArrayList" /> of exception objects.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ReplicationAgentContainerException.FlatExceptionCollection">
+			<summary>获取使用 <see cref="T:System.Collections.IEnumerable" /> 接口访问的异常对象的集合。</summary>
+			<returns>An <see cref="T:System.Collections.IEnumerable" /> interface used to access the collection.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentContainerWithWatsonException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentContainerException" /> 类的新实例。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ReplicationAgentException">
+			<summary>复制代理执行过程中生成的异常的异常基类。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentException.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentException.#ctor(System.String)">
+			<summary>使用指定的错误消息创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentException" /> 类的新实例。</summary>
+			<param name="message">A message that describes the error. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用序列化的数据创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentException" /> 类的新实例。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的错误消息和对导致此异常的内部异常的引用创建 <see cref="T:Microsoft.SqlServer.Replication.ReplicationAgentException" /> 类的新实例。</summary>
+			<param name="message">The error message that explains the reason for the exception. </param>
+			<param name="innerException">The exception that is the cause of the current exception. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.ReplicationAgentException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用有关异常的信息设置指定的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</summary>
+			<param name="info">The object that holds the serialized object data.</param>
+			<param name="context">The contextual information about the source or destination. </param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.ReplicationAgentException.MessageCode">
+			<summary>获取基础错误的错误代码。</summary>
+			<returns>An <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ReplicationType">
+			<summary>枚举为其生成快照的发布的类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ReplicationType.Merge">
+			<summary>合并发布。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ReplicationType.None">
+			<summary>未指定发布类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ReplicationType.Snapshot">
+			<summary>快照发布。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ReplicationType.Transactional">
+			<summary>事务发布。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.SecurityMode">
+			<summary>枚举复制代理连接到复制拓扑中的某一服务器时要使用的身份验证的类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.SecurityMode.Integrated">
+			<summary>Windows 身份验证</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.SecurityMode.Standard">
+			<summary>
+            在用于与 Web 同步 Web 服务器的安全套接字层 (SSL) 连接时的 SQL Server 身份验证或 HTTP 基本身份验证。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.SnapshotGenerationAgent">
+			<summary>提供复制快照代理的功能。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.SnapshotGenerationAgent" /> 类的实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.GenerateSnapshot">
+			<summary>启动快照代理以生成快照。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.BcpBatchSize">
+			<summary>获取或设置在一次大容量复制操作中要发送到分发服务器的行数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that represents the batch size.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.Distributor">
+			<summary>获取或设置充当发布的分发服务器的 SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name of the Distributor.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DistributorDeadlockPriority">
+			<summary>获取或设置死锁发生时快照代理连接到分发服务器的优先级。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.DeadlockPriority" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DistributorEncryptionLevel">
+			<summary>获取或设置连接到分发服务器时快照代理使用的安全套接字层 (SSL) 加密的等级。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that can be one of the following:ValueDescription0Specifies that SSL is not used.1Specifies that SSL is used, but the agent does not verify that the SSL server certificate is signed by a trusted issuer.2Specifies that SSL is used, and that the certificate is verified.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DistributorLogin">
+			<summary>获取或设置使用 SQL Server 身份验证本地连接到分发服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DistributorPassword">
+			<summary>设置使用 SQL Server 身份验证本地连接到分发服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DistributorSecurityMode">
+			<summary>获取或设置在本地连接到分发服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DynamicFilterHostName">
+			<summary>获取或设置提供给在参数化行筛选器中使用的 HOST_NAME 函数的值。</summary>
+			<returns>A <see cref="T:System.String" /> value used for filtering. </returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DynamicFilterLogin">
+			<summary>获取或设置提供给在参数化行筛选器中使用的 SUSER_SNAME 函数的值。</summary>
+			<returns>A <see cref="T:System.String" /> value used for filtering. </returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.DynamicSnapshotLocation">
+			<summary>获取或设置用于订阅基于参数化行筛选器定义的合并发布的分区快照的位置。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the full path to location of the snapshot file for the subscriber.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.FieldDelimiter">
+			<summary>获取或设置在 SQL Server 大容量复制数据文件中用于标记字段末尾的字符或字符序列。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the field delimiter. </returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.MaxBcpThreads">
+			<summary>获取或设置可以并行执行的大容量复制操作的数量。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that represents the number of parallel threads.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.MaxNetworkOptimization">
+			<summary>获取或设置是否将分区外删除发送到订阅服务器。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.Publication">
+			<summary>获取或设置发布的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.Publisher">
+			<summary>获取或设置作为发布服务器的 SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.PublisherDatabase">
+			<summary>获取或设置发布数据库的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.PublisherDeadlockPriority">
+			<summary>获取或设置死锁发生时快照代理连接到发布服务器的优先级。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.DeadlockPriority" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.PublisherEncryptionLevel">
+			<summary>获取或设置连接到分发服务器时快照代理使用的安全套接字层 (SSL) 加密的等级。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that can be one of the following:ValueDescription0Specifies that SSL is not used.1Specifies that SSL is used, but the agent does not verify that the SSL server certificate is signed by a trusted issuer.2Specifies that SSL is used, and that the certificate is verified.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.PublisherLogin">
+			<summary>获取或设置使用 SQL Server 身份验证连接到发布服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.PublisherPassword">
+			<summary>设置使用 SQL Server 身份验证连接到发布服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.PublisherSecurityMode">
+			<summary>获取或设置在连接到发布服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.ReplicationType">
+			<summary>获取或设置发布的类型。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.ReplicationType" /> value that indicates the type of publication.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.RowDelimiter">
+			<summary>获取或设置在 SQL Server 大容量复制数据文件中用于标记行末尾的字符或字符序列。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the row delimiter. </returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.SecureDistributorPassword">
+			<summary>设置使用 SQL Server 身份验证本地连接到分发服务器时使用的密码（作为 <see cref="T:System.Security.SecureString" /> 对象）。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.SecurePublisherPassword">
+			<summary>设置在使用 SQL Server 身份验证连接到发布服务器时使用的密码（作为 <see cref="T:System.Security.SecureString" /> 对象）。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.StartQueueTimeout">
+			<summary>获取或设置已在运行合并发布的并发分区快照进程的最大数目时快照代理等待的时间。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that represents the time, in seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.SnapshotGenerationAgent.Supports70Subscribers">
+			<summary>获取或设置生成的快照是否支持 SQL Server 7.0 订阅服务器。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.StatusEventArgs">
+			<summary>表示在 <see cref="E:Microsoft.SqlServer.Replication.AgentCore.Status" /> 事件发生时复制代理返回的状态信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.StatusEventArgs.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.StatusEventArgs" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.StatusEventArgs.#ctor(System.String,System.Byte,Microsoft.SqlServer.Replication.MessageStatus)">
+			<summary>使用提供的复制代理状态信息创建 <see cref="T:Microsoft.SqlServer.Replication.StatusEventArgs" /> 类的新实例。</summary>
+			<param name="message">The status message returned by the replication agent.</param>
+			<param name="percentCompleted">A <see cref="T:System.Byte" /> value that indicates estimated amount of the overall synchronization that has completed.</param>
+			<param name="messageStatus">A <see cref="T:Microsoft.SqlServer.Replication.MessageStatus" /> value that indicates the current operational status of the replication agent.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.StatusEventArgs.Message">
+			<summary>复制代理所返回的状态消息。</summary>
+			<returns>A <see cref="T:System.String" /> value that contains the status message.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.StatusEventArgs.MessageStatus">
+			<summary>复制代理的当前操作状态。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.MessageStatus" /> value that indicates the current operational status of the replication agent.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.StatusEventArgs.PercentCompleted">
+			<summary>已完成的整个同步的估计量。</summary>
+			<returns>A <see cref="T:System.Byte" /> value that indicates estimated amount of the overall synchronization that has completed from 0 (starting) to 100 (complete).</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.SubscriptionOption">
+			<summary>枚举订阅的类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.SubscriptionOption.Anonymous">
+			<summary>匿名订阅。如果您要创建某一订阅但不在发布服务器上注册此订阅，则匿名订阅是必需的。如果在订阅配置期间无法建立与发布服务器的 SQL Server 连接，则匿名订阅是必需的。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.SubscriptionOption.Pull">
+			<summary>请求订阅。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.SubscriptionOption.Push">
+			<summary>推送订阅。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.TransSynchronizationAgent">
+			<summary>提供复制分发代理的功能。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.TransSynchronizationAgent.#ctor">
+			<summary>创建 <see cref="T:Microsoft.SqlServer.Replication.TransSynchronizationAgent" /> 类的实例。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Status">
+			<summary>在分发代理返回同步状态信息时发生。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.TransSynchronizationAgent.IsSnapshotRequired">
+			<summary>连接到分发服务器和订阅服务器以便确定在下一个代理同步过程中是否将应用新快照。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that indicates whether a new snapshot will be applied. </returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Synchronize">
+			<summary>启动分发代理以便同步订阅。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.AltSnapshotFolder">
+			<summary>获取或设置订阅的备用快照文件夹。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the path to the alternate snapshot folder.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.ComErrorCollection">
+			<summary>获取复制代理生成的错误的集合。</summary>
+			<returns>A <see cref="T:System.Collections.IEnumerable" /> collection of <see cref="T:Microsoft.SqlServer.Replication.ComErrorRecord" /> objects.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Distributor">
+			<summary>获取或设置充当订阅的分发服务器的 Microsoft SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name of the Distributor.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DistributorAddress">
+			<summary>获取或设置在指定 <see cref="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DistributorNetwork" /> 属性时用于连接到分发服务器的网络地址。</summary>
+			<returns>A <see cref="T:System.String" /> value representing the Distributor address.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DistributorLogin">
+			<summary>获取或设置通过使用 SQL Server 身份验证连接到分发服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DistributorNetwork">
+			<summary>获取或设置在连接到分发服务器时使用的客户端网络库。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.NetworkType" /> value that indicates the Net-Library to use.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DistributorPassword">
+			<summary>设置通过使用 SQL Server 身份验证连接到分发服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DistributorSecurityMode">
+			<summary>获取或设置在连接到分发服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DtsPackageFileName">
+			<summary>获取或设置在命令行集应用于订阅服务器之前用于转换它们的 Microsoft SQL Server 2000 Data Transformation Services (DTS) 包的名称和路径。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DtsPackagePassword">
+			<summary>获取或设置用于访问 <see cref="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.DtsPackageFileName" /> 属性指定的 Microsoft SQL Server 2000 Data Transformation Services (DTS) 包的所有者密码。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.FileTransferType">
+			<summary>获取或设置初始快照文件传输到订阅服务器的方式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.FileTransferOption" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.LastUpdatedTime">
+			<summary>获取复制代理上次同步订阅的时间的时间戳。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents a date and time.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.LoginTimeout">
+			<summary>获取或设置等待建立连接的最大秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that represents a maximum time, in seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.MaxDeliveredTransactions">
+			<summary>获取或设置在单个代理执行过程中应用于订阅服务器的事务的最大数目。</summary>
+			<returns>A <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Output">
+			<summary>获取或设置代理输出文件的文件名和路径。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.OutputVerboseLevel">
+			<summary>获取或设置在代理输出文件中由分发代理记录的信息量。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that can be one of the following values. ValueDescription0 Only error messages are printed. 1All the progress report messages are printed. 2 (default)All error messages and progress report messages are printed. This is useful for debugging.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.ProfileName">
+			<summary>获取或设置代理使用的配置文件的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the name of the profile.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Publication">
+			<summary>获取或设置发布的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Publisher">
+			<summary>获取或设置作为订阅的发布服务器的 Microsoft SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.PublisherDatabase">
+			<summary>获取或设置发布数据库的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.QueryTimeout">
+			<summary>获取或设置允许内部查询完成的秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that represents the number of seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SkipErrors">
+			<summary>获取或设置此代理要跳过的错误号的以冒号分隔的列表。</summary>
+			<returns>A <see cref="T:System.String" /> value that consists of a list of colon-separated Microsoft SQL Server error numbers.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.Subscriber">
+			<summary>获取或设置作为订阅服务器的 Microsoft SQL Server 的实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SubscriberDatabase">
+			<summary>获取或设置订阅数据库的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SubscriberDataSourceType">
+			<summary>获取或设置用作订阅服务器的数据源的类型。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.DataSourceType" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SubscriberLogin">
+			<summary>获取或设置通过使用 SQL Server 身份验证连接到订阅服务器时使用的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that is the login name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SubscriberPassword">
+			<summary>设置通过使用 SQL Server 身份验证连接到订阅服务器时使用的密码。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SubscriberSecurityMode">
+			<summary>获取或设置在连接到发布服务器时使用的安全模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SecurityMode" /> value that represents the security mode.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.SubscriptionType">
+			<summary>获取或设置订阅是推送订阅还是请求订阅。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Replication.SubscriptionOption" /> value that indicates the subscription type.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.UseInProcLoader">
+			<summary>获取或设置在订阅服务器上应用快照文件时是否使用 BULK INSERT 命令。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Replication.TransSynchronizationAgent.WorkingDirectory">
+			<summary>获取或设置在使用文件传输协议 (FTP) 时从其访问快照文件的工作目录。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Replication.ValidateType">
+			<summary>枚举在同步过程中执行的验证类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.FastRowCountAndBinaryChecksum">
+			<summary>订阅服务器数据的快速行计数和二进制校验和验证。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.FastRowCountAndChecksum">
+			<summary>订阅服务器数据的快速行计数和校验和验证。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.FastRowCountOnly">
+			<summary>仅执行订阅服务器数据的快速行计数验证。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.NoValidation">
+			<summary>不验证订阅服务器数据（默认值）。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.RowCountAndBinaryChecksum">
+			<summary>订阅服务器数据的完全行计数和二进制校验和验证。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.RowCountAndChecksum">
+			<summary>订阅服务器数据的完全行计数和校验和验证。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Replication.ValidateType.RowCountOnly">
+			<summary>订阅服务器数据的完全行计数验证。</summary>
+		</member>
+	</members>
+</doc>

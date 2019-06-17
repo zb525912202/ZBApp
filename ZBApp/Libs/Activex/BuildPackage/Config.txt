@@ -1,0 +1,8 @@
+﻿;!@Install@!UTF-8!
+InstallPath="%TEMP%\\JetSilverlightSetup"
+RunProgram="JetSilverlightSetup.exe"
+ExtractTitle="正在解压安装程序"
+ExtractCancelText="取消"
+ExtractDialogWidth="400"
+;!@InstallEnd@!
+ 

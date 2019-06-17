@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FCF96D5-CAB8-42D4-BBED-AF9CD1093F86}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZB.Framework.Business</RootNamespace>
+    <AssemblyName>ZB.Framework.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Libs\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\Libs\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Libs\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrLevelHelper.cs" />
+    <Compile Include="BrObjectNameHelper.cs" />
+    <Compile Include="BrSortableHelper.cs" />
+    <Compile Include="CheckRecord\LevelRecordChecker.cs" />
+    <Compile Include="CheckRecord\LevelRecordCheckResult.cs" />
+    <Compile Include="CheckRecord\RecordChecker.cs" />
+    <Compile Include="CheckRecord\RecordCheckHelper.cs" />
+    <Compile Include="CheckRecord\RecordCheckResult.cs" />
+    <Compile Include="ConstAppSetting.cs" />
+    <Compile Include="ConstDB.cs" />
+    <Compile Include="DbCache\DBCacheBase.cs" />
+    <Compile Include="DbCache\DepthLevelDBCacheBase.cs" />
+    <Compile Include="DbCache\LevelDBCacheBase.cs" />
+    <Compile Include="DbCache\LevelPropertyDBCacheBase.cs" />
+    <Compile Include="DbCache\ObjectNameCacheBase.cs" />
+    <Compile Include="DbCache\SortableDBCacheBase.cs" />
+    <Compile Include="GradeQuestion\DanXuanGrader.cs" />
+    <Compile Include="GradeQuestion\DuoXuanGrader.cs" />
+    <Compile Include="GradeQuestion\PanDuanGrader.cs" />
+    <Compile Include="GradeQuestion\QuestionGraderBase.cs" />
+    <Compile Include="GradeQuestion\XuanZeTiGraderBase.cs" />
+    <Compile Include="NavNode\NavNode.cs" />
+    <Compile Include="ObjectInterface\IDepth.cs" />
+    <Compile Include="ObjectInterface\ILevel.cs" />
+    <Compile Include="ObjectInterface\IObjectId.cs" />
+    <Compile Include="ObjectInterface\IObjectName.cs" />
+    <Compile Include="ObjectInterface\IObjectNO.cs" />
+    <Compile Include="ObjectInterface\ISortable.cs" />
+    <Compile Include="PeriodCache\PeriodCacheBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartDataSource\DataSourceItem.cs" />
+    <Compile Include="SmartDataSource\DataSourceItem.UI.cs" />
+    <Compile Include="SmartDataSource\DbDataSource.cs" />
+    <Compile Include="SmartDataSource\EnumDataSource.cs" />
+    <Compile Include="SmartDataSource\SimpleDataSource.cs" />
+    <Compile Include="SmartDataSource\SmartDataSource.cs" />
+    <Compile Include="SmartExcelImport\ExcelImport.cs" />
+    <Compile Include="SmartExcelImport\ExcelImportCodon.cs" />
+    <Compile Include="SmartExcelImport\ExcelImportColumn.cs" />
+    <Compile Include="SmartExcelImport\ExcelImportColumnCodon.cs" />
+    <Compile Include="SmartExcelImport\ExcelImportResult.cs" />
+    <Compile Include="SmartExcelImport\ExcelImportValidate.cs" />
+    <Compile Include="SortableHelper.cs" />
+    <Compile Include="StringTreeHelper.cs" />
+    <Compile Include="TreeHelper\Base\TreeHelperBase.cs" />
+    <Compile Include="TreeHelper\Base\TreeHelperBase.Foreach.cs" />
+    <Compile Include="TreeHelper\Base\TreeHelper_Gerneric.cs" />
+    <Compile Include="TreeHelper\Base\TreeHelper_LevelProperty.cs" />
+    <Compile Include="TreeHelper\Base\TreeHelper_Normal.cs" />
+    <Compile Include="TreeHelper\Base\TreeHelper_Usual.cs" />
+    <Compile Include="TreeHelper\TreeHelper.Generic.cs" />
+    <Compile Include="TreeHelper\TreeHelper.Normal.cs" />
+    <Compile Include="TreeHelper\TreeHelper.Usual.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ZB.AppShell.Addin\ZB.AppShell.Addin.csproj">
+      <Project>{b3276dec-fc00-472d-b346-6531fd62a643}</Project>
+      <Name>ZB.AppShell.Addin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.ObjectMapping\ZB.Framework.ObjectMapping.csproj">
+      <Project>{25621f8f-da2d-457d-aae2-8523630c8152}</Project>
+      <Name>ZB.Framework.ObjectMapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.Utility\ZB.Framework.Utility.csproj">
+      <Project>{4bcfbf52-ecf2-4895-8716-2bf8b68651e2}</Project>
+      <Name>ZB.Framework.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

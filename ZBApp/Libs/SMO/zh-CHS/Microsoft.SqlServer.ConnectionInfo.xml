@@ -1,0 +1,1314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.SqlServer.ConnectionInfo</name>
+	</assembly>
+	<members>
+		<member name="N:Microsoft.SqlServer.Management.Common">
+			<summary><see cref="Microsoft.SqlServer.Management.Common" /> 命名空间包含表示从 SMO 或 RMO 应用程序到 SQL Server 实例的连接的类。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.AutoDisconnectMode">
+			<summary>包含用于为到 SQL Server 实例的连接指定自动断开连接选项的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.AutoDisconnectMode.DisconnectIfPooled">
+			<summary>如果连接已入池，则从 SQL Server 实例断开连接。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.AutoDisconnectMode.NoAutoDisconnect">
+			<summary>不自动断开连接。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.CapturedSql">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.CapturedSql" /> 类表示通过引用的连接发送给 SQL Server 实例的 Transact-SQL 命令。但是，它们将被重定向到一个缓冲区，而不是在 SQL Server 实例上立即运行。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.CapturedSql.Add(System.String)">
+			<summary>将 Transact-SQL 语句添加到缓冲区中捕获的 Transact-SQL 命令。</summary>
+			<param name="sqlStatement">A <see cref="T:System.String" /> value that specifies the Transact-SQL statement.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.CapturedSql.Clear">
+			<summary>清除包含捕获的 Transact-SQL 命令的缓冲区。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.CapturedSql.Text">
+			<summary>获取缓冲区中捕获的 Transact-SQL 命令。</summary>
+			<returns>A <see cref="T:System.Collections.Specialized.StringCollection" /> system object value that contains the captured Transact-SQL commands.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" /> 类是在尝试更改某登录名的密码失败时引发的异常，该登录名通过使用 SQL Server 身份验证与 SQL Server 实例建立连接。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException.#ctor(System.String)">
+			<summary>初始化具有指定消息文本的 <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException.#ctor(System.String,System.Exception)">
+			<summary>初始化具有指定消息文本和内部异常的 <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" /> 类是在尝试更改到 Microsoft SQL Server 实例的连接失败时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" /> 类是在到 SQL Server 实例的连接出错时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用指定的序列化信息和流上下文初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" /> 类的新实例。</summary>
+			<param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo" /> system object that specifies the serialization information for the exception.</param>
+			<param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext" /> system object that specifies the streaming context for the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" /> 类是在尝试与 SQL Server 实例建立连接失败时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionFailureException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionFailureException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionFailureException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" /> 对象是在 <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类的构造中使用的基类，它表示用于连接到 SQL Server 实例的信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.ConnectionInfoBase)">
+			<summary>基于指定的对象初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" /> 类的新实例。</summary>
+			<param name="conn">A <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" /> object value that specifies connection information on which to base the new object.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.ConnectionType)">
+			<summary>使用指定的连接类型初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" /> 类的新实例。</summary>
+			<param name="serverType">A <see cref="T:Microsoft.AnalysisServices.ConnectionType" />  object value that specifies the type of connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ConnectionParmsChanged">
+			<summary>在派生类中重写时，使您能够指定连接参数更改时的自定义操作。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ToString">
+			<summary>将对象作为字符串值返回。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ServerCaseSensitivity">
+			<summary>获取或设置连接的服务器区分大小写属性。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity" /> system object value that specifies the server case sensitivity for the connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ServerType">
+			<summary>获取或设置服务器连接类型。</summary>
+			<returns>A <see cref="T:Microsoft.AnalysisServices.ConnectionType" /> system object value that specifies the type of connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ServerVersion">
+			<summary>获取或设置有关 SQL Server 实例的版本信息。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> system object value that specifies the version information about the instance of SQL Server.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionManager">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionManager" /> 类管理到 SQL Server 实例的连接。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.InfoMessage">
+			<summary>
+        SQL Server 实例生成信息性消息时发生的事件。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.RemoteLoginFailed">
+			<summary>远程登录名无法连接到 SQL Server 实例时，发生此事件。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.ServerMessage">
+			<summary>
+        SQL Server 返回当前连接的警告或信息性消息时发生的事件。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.StateChange">
+			<summary>
+        SQL Server 实例更改状态时发生的事件。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.StatementExecuted">
+			<summary>
+        SQL Server 实例在当前连接上执行语句时发生的事件。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.CheckServerVersion(Microsoft.SqlServer.Management.Common.ServerVersion)">
+			<summary>检查 SQL Server 目标实例的版本。</summary>
+			<param name="version">A <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> object that specifies the version of the target server for the connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.Connect">
+			<summary>连接到 SQL Server 实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.Disconnect">
+			<summary>从 SQL Server 实例断开连接。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSql(Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction,System.Object,System.Data.DataSet,System.Boolean)">
+			<summary>执行 Transact-SQL 命令。</summary>
+			<returns>A <see cref="T:System.Object" /> that contains the results of the Transact-SQL command.</returns>
+			<param name="action">The <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction" /> object.</param>
+			<param name="execObject">The executable <see cref="T:System.Object" />.</param>
+			<param name="fillDataSet">The <see cref="T:System.Data.DataSet" /> object.</param>
+			<param name="catchException">A Boolean value that specifies whether to catch an exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.ForceDisconnected">
+			<summary>从 SQL Server 实例强制断开连接。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.AutoDisconnectMode">
+			<summary>获取或设置 SQL Server 实例的引用连接的自动断开连接模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.AutoDisconnectMode" /> object value that specifies the automatic disconnection mode of the referenced connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.CapturedSql">
+			<summary>获取在捕获模式中运行连接时捕获的 Transact-SQL 语句。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.CapturedSql" /> object value that contains the captured Transact-SQL statements.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.DatabaseEngineType">
+			<summary>获取数据库引擎类型。</summary>
+			<returns>Either a stand-alone instance of SQL Server or a SQL Azure database.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.InUse">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定是否正在使用连接。</summary>
+			<returns>A <see cref="T:System.Boolean" /> object value that specifies whether the connection is in use.If True, the connection is in use.If False (default), the connection is not in use.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.IsForceDisconnected">
+			<summary>获取一个 <see cref="T:System.Boolean" /> 值，该值指定是否强制断开了连接。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection was forcibly disconnected.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.IsOpen">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定连接当前是否已打开。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection is open.If True, the connection is open.If False (default), the connection is not open.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.LockTimeout">
+			<summary>获取或设置在锁定当前事务时连接超时所需的时间（秒）。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the time in seconds for the connection to time out when the current transaction is locked.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.ServerVersion">
+			<summary>获取连接的 SQL Server 实例的版本。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> object value that specifies the version of the connected instance of SQL Server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.SqlConnectionObject">
+			<summary>获取连接对象。</summary>
+			<returns>A <see cref="T:System.Data.SqlClient.SqlConnection" /> object value that specifies the connection.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction">
+			<summary>执行 Transact-SQL 操作。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.ExecuteNonQuery">
+			<summary>执行非查询命令。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.ExecuteReader">
+			<summary>执行读取器命令。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.ExecuteScalar">
+			<summary>执行标量命令。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.FillDataSet">
+			<summary>填充数据集命令。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.Unknown">
+			<summary>未知命令类型。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionSettings">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionSettings" /> 类表示到服务器实例（如 SQL Server）的连接使用的设置。<see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类继承 <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionSettings" /> 类。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionSettings.NoConnectionTimeout">
+			<summary>获取或设置 <see cref="T:System.Int32" /> 值，该值指定经过多长时间认为连接超时（秒）。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the time the connection takes to time out in seconds.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionSettings.ThrowIfPropertyNotSet(System.String,System.String)">
+			<summary>如果指定的连接属性为 Null 或为空，将引发异常。</summary>
+			<returns>If the string is null or empty, this method throws a <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" />. Otherwise, this method returns the str parameter value.</returns>
+			<param name="propertyName">A string that specifies the name of the connection property, such as "Login".</param>
+			<param name="str">A <see cref="T:System.String" /> object that contains the property value.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionSettings.ThrowIfPropertyNotSet(System.String,System.String,System.Boolean)">
+			<summary>如果指定的连接属性为 Null 或为空（后者为可选项），将引发异常。</summary>
+			<returns>If the property is not set, this method throws a <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" />. Otherwise, this method returns the str parameter value. </returns>
+			<param name="propertyName">A string that specifies the name of the connection property, such as "Login".</param>
+			<param name="str">A <see cref="T:System.String" /> object that contains the property value.</param>
+			<param name="checkEmpty">True if you want to check the property value for an empty string or null value; false if you want to check only for a null value.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ConnectionSettings.ToString">
+			<summary>将引用的对象名称作为字符串返回。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the referenced object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ApplicationName">
+			<summary>获取或设置已与服务器建立连接的应用程序的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the application.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectAsUser">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定是否使用模拟建立连接。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection is established using impersonation.If True, the connection is established using impersonation.If False (default), the connection is established using the credentials specified by the <see cref="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Login" /> and <see cref="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Password" /> properties.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectAsUserName">
+			<summary>获取或设置使用模拟进行连接时用户的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the user name used when the connection is established using impersonation of a user.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectAsUserPassword">
+			<summary>获取或设置使用模拟进行连接时用户的密码。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the user password used when the connection is established using impersonation of a user.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectionString">
+			<summary>获取或设置用于与指定数据源建立连接的连接字符串。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the connection string used to establish a connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectTimeout">
+			<summary>获取或设置连接超时期（秒）。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the connection time-out period in seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.DatabaseName">
+			<summary>获取或设置连接所需的数据库。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the database specified by the connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.EncryptConnection">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定是否对连接进行加密。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection is encrypted.If True, the connection is encrypted.If False (default), the connection is not encrypted.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Login">
+			<summary>获取或设置与服务器实例建立连接所需的登录名。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the logon required to establish a connection with the instance of the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.LoginSecure">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性，该属性指定是使用 Windows 身份验证还是 SQL Server 身份验证建立到服务器的连接。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection is established to the server by using Windows Authentication or SQL Server Authentication.If True (default), Windows Authentication is used to establish a connection with the server.If False, SQL Server Authentication is used to establish a connection with the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.MaxPoolSize">
+			<summary>获取或设置与服务器建立连接时指定的连接接受的连接池中的最大连接数。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the maximum number of connections in a connection pool.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.MinPoolSize">
+			<summary>获取或设置与服务器建立连接时指定的连接接受的连接池中的最小连接数。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the minimum number of connections in a connection pool.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.MultipleActiveResultSets">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定是否允许多个活动的结果集。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether more than one active result set is permitted.If True, multiple active result sets are permitted.If False (default), multiple active result sets are not permitted.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.NetworkProtocol">
+			<summary>获取或设置用于与服务器建立连接的网络协议。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.NetworkProtocol" /> object value that specifies the network protocol used to establish the connection to the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.NonPooledConnection">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定连接是否可入池。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection may be pooled or nonpooled. If True, the connection must be nonpooled and not be part of a connection pool.If False (default), the connection may be pooled and part of a connection pool.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.PacketSize">
+			<summary>获取或设置通过网络在客户端和服务器之间发送的数据包大小（字节）。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the network packet size in bytes.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Password">
+			<summary>获取或设置使用 SQL Server 身份验证时与登录名一起使用的、用于与服务器建立连接的密码。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the password that is required when you are using SQL Server Authentication.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.PooledConnectionLifetime">
+			<summary>获取或设置已入池连接的生存期。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the lifetime of the pooled connection in seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.SecureConnectionString">
+			<summary>获取或设置连接字符串的加密版本。</summary>
+			<returns>A <see cref="T:System.Security.SecureString" /> value that specifies an encrypted connection string.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.SecurePassword">
+			<summary>获取或设置使用 SQL Server 身份验证时与登录名一起使用的、用于与服务器建立连接的安全密码。</summary>
+			<returns>A <see cref="T:System.Security.SecureString" /> value that specifies the secure password that is required when you are using SQL Server Authentication.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ServerInstance">
+			<summary>获取或设置服务器的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.WorkstationId">
+			<summary>获取或设置唯一标识工作站的 ID 值。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the ID value that uniquely identifies the workstation.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ConnectionType">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" /> 枚举包含的值用于指定与之建立连接的服务器类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.IntegrationServer">
+			<summary>
+        Integration Services 服务。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.Olap">
+			<summary>
+        Analysis Services 联机分析处理 (OLAP) 服务器。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.ReportServer">
+			<summary>
+        Reporting Services 服务器。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.Sql">
+			<summary>
+        SQL Server 实例。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.SqlCE">
+			<summary>
+        SQL Server CE 实例。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.SqlConnection">
+			<summary>
+        SQL Server 实例。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.WmiManagementScope">
+			<summary>WMI 命名空间。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DatabaseEngineType">
+			<summary>
+        SQL Server 独立实例或 SQL Azure 数据库的数据库引擎类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.SqlAzureDatabase">
+			<summary>SQL Azure 数据库。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.Standalone">
+			<summary>
+        SQL Server 独立数据库引擎。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.Unknown">
+			<summary>未知的数据库引擎类型。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" /> 类表示引发数据传输事件时使用的参数。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.DataTransferEventArgs.#ctor(Microsoft.SqlServer.Management.Common.DataTransferEventType,System.String)">
+			<summary>使用指定的消息为指定的事件初始化 <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" /> 类的新实例。</summary>
+			<param name="eventType">A <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" /> object that specifies the type of event that is associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" /> object.</param>
+			<param name="message">A string value that specifies the message text associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" /> object.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.DataTransferEventArgs.DataTransferEventType">
+			<summary>获取与 <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" /> 对象关联的数据传输事件的类型。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" /> object that specifies the type of data transfer event associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.DataTransferEventArgs.Message">
+			<summary>获取与 <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" /> 对象关联的消息文本。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the message text associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" /> object.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DataTransferEventHandler">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventHandler" /> 类表示处理由数据传输过程引发的事件的方法。</summary>
+			<param name="sender">An <see cref="T:System.Object" /> system object value that specifies the object that raised the event.</param>
+			<param name="e">A <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" /> object value that specifies the arguments passed to the event handler.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DataTransferEventType">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" /> 枚举包含用来指定数据传输事件的类型的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferEventType.Information">
+			<summary>信息性事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferEventType.Progress">
+			<summary>进度事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferEventType.Warning">
+			<summary>警告事件。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> 类表示引发数据传输进度事件时使用的参数。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.#ctor(Microsoft.SqlServer.Management.Common.DataTransferProgressEventType,System.String,System.Int64,System.Exception)">
+			<summary>使用指定的传输 ID、进度计数和关联的异常为指定的事件初始化 <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> 类的新实例。</summary>
+			<param name="eventType">A <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" /> object that specifies the type of event that is associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> object.</param>
+			<param name="transferId">A <see cref="T:System.String" /> value that specifies the transfer ID value associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" /> object.</param>
+			<param name="progressCount">An <see cref="T:System.Int64" /> value that specifies the progress of the transfer in numbers of items transferred.</param>
+			<param name="ex">An <see cref="T:System.Exception" /> value that specifies the exception associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.DataTransferProgressEventType">
+			<summary>获取与 <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> 对象关联的数据传输进度事件的类型。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" /> object that specifies the type of data transfer progress event associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.Exception">
+			<summary>获取与 <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" /> 对象关联的异常。</summary>
+			<returns>An Exception object value that specifies the exception associated with the <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.ProgressCount">
+			<summary>获取当前传输的项数。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the current number of items transferred..</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.TransferId">
+			<summary>获取唯一标识数据传输进度事件的 ID 值。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the ID value that uniquely identifies the data transfer progress event.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventHandler">
+			<summary>表示处理由数据传输进度报告过程引发的事件的方法。</summary>
+			<param name="sender">The <see cref="T:System.Object" /> object that raised the event.</param>
+			<param name="e">An <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> value that specifies the arguments passed to the event handler.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" /> 枚举包含用来指定数据传输进度事件的类型的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.AllowedToFailPrologueSql">
+			<summary>允许序言 Transact-SQL 命令失败时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.CancelQuery">
+			<summary>取消 Transact-SQL 查询时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.CommitTransaction">
+			<summary>提交事务时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.Error">
+			<summary>出现错误时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecuteCompensatingSql">
+			<summary>执行补偿 Transact-SQL 命令时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecuteEpilogueSql">
+			<summary>执行结语 Transact-SQL 命令时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecuteNonTransactableSql">
+			<summary>执行非事务的 Transact-SQL 命令时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecutePrologueSql">
+			<summary>执行序言 Transact-SQL 命令时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecutingDataFlow">
+			<summary>执行数据流时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.GenerateDataFlow">
+			<summary>生成数据流时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.RollbackTransaction">
+			<summary>回滚事务时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.StartTransaction">
+			<summary>启动事务时发生的事件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.TransferringRows">
+			<summary>传输行时发生的事件。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DeferredUseMode">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DeferredUseMode" /> 枚举包含的值用于指定在服务器连接上如何延迟使用 Transact-SQL 语句。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DeferredUseMode.CollapseRedundant">
+			<summary>折叠冗余的语句。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DeferredUseMode.MergeSql">
+			<summary>合并 Transact-SQL 语句。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.DeferredUseMode.None">
+			<summary>按通常方式处理语句。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" /> 类是在关闭连接时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常对象初始化 <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" /> 类是在服务器连接上遇到执行失败时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ExecutionFailureException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ExecutionFailureException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ExecutionFailureException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ExecutionTypes">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ExecutionTypes" /> 枚举包含的值用于指定使用引用的连接发送到服务器的 Transact-SQL 命令的执行选项。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.ContinueOnError">
+			<summary>出现错误后继续执行。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.Default">
+			<summary>默认执行路径。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.NoCommands">
+			<summary>没有可执行的命令。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.NoExec">
+			<summary>未执行。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.ParseOnly">
+			<summary>仅分析可执行的命令。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.QuotedIdentifierOn">
+			<summary>用于分隔命令的标识符。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.FixedServerRoles">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.FixedServerRoles" /> 枚举包含的值用于指定可以分配给登录名的固定服务器角色。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.BulkAdmin">
+			<summary>管理大容量操作。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.DBCreator">
+			<summary>可以创建数据库。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.DiskAdmin">
+			<summary>可以更改资源。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.None">
+			<summary>无服务器角色。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.ProcessAdmin">
+			<summary>可以更改连接。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.SecurityAdmin">
+			<summary>可以更改登录名。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.ServerAdmin">
+			<summary>可以更改 Microsoft SQL Server 设置、关闭 SQL Server 服务、创建和更改端点、更改 SQL Server 状态以及更改资源。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.SetupAdmin">
+			<summary>可以更改链接服务器。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.SysAdmin">
+			<summary>可以控制 Microsoft SQL Server 实例的任何方面。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.IAlterable">
+			<summary>定义用于在引用的连接上更改对象的方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.IAlterable.Alter">
+			<summary>更新 Microsoft SQL Server 实例上的任何属性更改。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ICreatable">
+			<summary>定义用于在引用的连接上创建对象的方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ICreatable.Create">
+			<summary>在由引用的 SMO 对象定义的服务器上创建对象。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.IDataTransferProvider">
+			<summary>定义用于在引用的连接上传输数据的方法和事件。</summary>
+		</member>
+		<member name="E:Microsoft.SqlServer.Management.Common.IDataTransferProvider.TransferEvent">
+			<summary>表示传输过程发生时引发的事件。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.IDataTransferProvider.Configure(Microsoft.SqlServer.Management.Common.ITransferMetadataProvider)">
+			<summary>配置数据传输过程的数据传输接口。</summary>
+			<param name="metadataProvider">An <see cref="T:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider" /> object that specifies the metadata required for the data transfer process.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.IDataTransferProvider.ExecuteTransfer">
+			<summary>执行传输过程。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.IDroppable">
+			<summary>定义用于在引用的连接上删除对象的方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.IDroppable.Drop">
+			<summary>删除引用的对象。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.IMarkForDrop">
+			<summary>定义用于标记要删除的对象的方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.IMarkForDrop.MarkForDrop(System.Boolean)">
+			<summary>将引用的对象标记为当 Alter 方法下一次更改其父对象时将其删除。</summary>
+			<param name="dropOnAlter">A <see cref="T:System.Boolean" /> value that specifies whether to drop an object when its parent object is altered with the Alter method.If True, the object is dropped when the Alter method is run on the parent object.If False, the object is dropped immediately.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException">
+			<summary>在服务器的引用连接上将无效参数传递给方法时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.InvalidArgumentException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.InvalidArgumentException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.InvalidArgumentException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException">
+			<summary>在服务器的引用连接上将属性设置为无效值时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.IRenamable">
+			<summary>定义引用的连接上的 Rename 方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.IRenamable.Rename(System.String)">
+			<summary>重命名引用的对象。</summary>
+			<param name="newname">A <see cref="T:System.String" /> value that specifies the new name of the object.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.IRestrictedAccess">
+			<summary>表示一个接口，用于为引用的连接实现对服务器的单用户访问。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.IRestrictedAccess.SingleConnection">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性，该值指定是否将对服务器的访问限制为单个用户。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether access to the server is restricted to a single user.If True, access to the server is restricted to a single user.If False (default), access to the server is not restricted and multiple users can connect.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ISfcConnection">
+			<summary>定义用于服务器连接的高级属性和方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.Connect">
+			<summary>连接到目标服务器。</summary>
+			<returns>True if the connection succeeds; otherwise, false.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.Copy">
+			<summary>复制连接对象。</summary>
+			<returns>True if the copy operation succeeds; otherwise, false.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.Disconnect">
+			<summary>断开与目标服务器的连接。</summary>
+			<returns>True if the connection succeeds; otherwise, false.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.ForceDisconnected">
+			<summary>从 SQL Server 实例强制断开连接。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.IsForceDisconnected">
+			<summary>获取一个 <see cref="T:System.Boolean" /> 值，该值指定是否强制断开了连接。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection was forcibly disconnected.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.IsOpen">
+			<summary>获取一个值，该值指示连接是否已打开。</summary>
+			<returns>True if the connection is open; otherwise, false.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.ServerInstance">
+			<summary>获取或设置连接的目标服务器名称。</summary>
+			<returns>A string containing the server name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.ServerVersion">
+			<summary>获取目标服务器的 SQL Server 版本。</summary>
+			<returns>A <see cref="T:System.Version" /> value that specifies the SQL Server version of the target server of the connection.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider">
+			<summary>定义在引用的连接上传输元数据所需的方法。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider.GetOptions">
+			<summary>获取用于在引用的连接上传输元数据过程的选项。</summary>
+			<returns>A <see cref="T:System.Collections.SortedList" /> system object that contains the options for the transfer metadata process.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider.SaveMetadata">
+			<summary>保存在引用的连接上传输过程的元数据。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.NetworkProtocol">
+			<summary>包含用于指定在建立引用连接的网络上使用的网络协议的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.AppleTalk">
+			<summary>AppleTalk 网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.BanyanVines">
+			<summary>Banyan Vines 网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.Multiprotocol">
+			<summary>多协议网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.NamedPipes">
+			<summary>命名管道网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.NotSpecified">
+			<summary>未指定网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.NWLinkIpxSpx">
+			<summary>NWLink IPX/SPX 网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.SharedMemory">
+			<summary>共享内存。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.TcpIp">
+			<summary>TCP/IP 网络协议。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.Via">
+			<summary>VIA 网络协议。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.NotInTransactionException">
+			<summary>在服务器的引用连接上某个事务内发生错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.NotInTransactionException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.NotInTransactionException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.NotInTransactionException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.NotInTransactionException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.NotInTransactionException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.NotInTransactionException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.OlapConnectionInfo">
+			<summary>This class supports the SMO infrastructure and is not intended to be used directly from your code. </summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.#ctor">
+			<summary>This constructor supports the SMO infrastructure and is not intended to be used directly from your code. </summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.#ctor(Microsoft.SqlServer.Management.Common.OlapConnectionInfo)">
+			<summary>This constructor supports the SMO infrastructure and is not intended to be used directly from your code. </summary>
+			<param name="conn">An <see cref="T:Microsoft.SqlServer.Management.Common.OlapConnectionInfo" /> object.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException">
+			<summary>在服务器连接上请求不可用的属性时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException">
+			<summary>在过程请求未在服务器连接上设置的属性时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.PropertyNotSetException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.PropertyNotSetException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.PropertyNotSetException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.QueryParameterizationMode">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Smo.QueryParameterizationMode" /> 枚举包含的值用于指定服务器连接处理带参数的查询的方式。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.QueryParameterizationMode.ForcedParameterization">
+			<summary>强制参数化。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.QueryParameterizationMode.None">
+			<summary>不进行参数化。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity">
+			<summary>包含用于指定服务器是否区分文本大小写的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity.CaseInsensitive">
+			<summary>服务器不区分大小写。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity.CaseSensitive">
+			<summary>服务器区分大小写。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity.Unknown">
+			<summary>不知道服务器是否区分大小写。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerComparer">
+			<summary>Represents the comparer class.</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerConnection">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 对象表示到服务器的一个连接。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.Data.SqlClient.SqlConnection)">
+			<summary>使用指定的连接参数初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类的新实例。</summary>
+			<param name="sqlConnection">A <see cref="T:System.Data.SqlClient.SqlConnection" /> system object that specifies connection parameters associated with the referenced connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(Microsoft.SqlServer.Management.Common.SqlConnectionInfo)">
+			<summary>使用指定的连接信息初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类的新实例。</summary>
+			<param name="sci">A <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object value that specifies the connection information that is required to establish a connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.String)">
+			<summary>使用指定的服务器实例初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类的新实例。</summary>
+			<param name="serverInstance">A <see cref="T:System.String" /> value that specifies the name of the instance of the server with which the connection is established.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.String,System.String,System.Security.SecureString)">
+			<summary>使用指定的服务器实例和登录凭据初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类的新实例。</summary>
+			<param name="serverInstance">A <see cref="T:System.String" /> value that specifies the name of the instance of the server with which the connection is established.</param>
+			<param name="userName">A <see cref="T:System.String" /> value that specifies the logon account used to establish the referenced connection.</param>
+			<param name="password">A <see cref="T:System.Security.SecureString" /> value that specifies the password used with the logon account.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.String,System.String,System.String)">
+			<summary>使用指定的服务器实例和登录凭据初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 类的新实例。</summary>
+			<param name="serverInstance">A <see cref="T:System.String" /> value that specifies the name of the instance of the server with which the connection is established.</param>
+			<param name="userName">A <see cref="T:System.String" /> value that specifies the logon account used to establish the referenced connection.</param>
+			<param name="password">A <see cref="T:System.String" /> value that specifies the password used with the logon account.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.BeginTransaction">
+			<summary>在引用的连接上启动事务。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Cancel">
+			<summary>取消该连接。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ChangePassword(System.Security.SecureString)">
+			<summary>更改与标准身份验证一起使用的登录密码。</summary>
+			<param name="newPassword">A <see cref="T:System.Security.SecureString" /> value that specifies the new password.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ChangePassword(System.String)">
+			<summary>更改与标准身份验证一起使用的登录密码。</summary>
+			<param name="newPassword">A <see cref="T:System.String" /> value that specifies the new password.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.CommitTransaction">
+			<summary>在引用的连接上提交当前事务。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Copy">
+			<summary>返回 <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> 对象的副本。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> object that is a copy of the referenced <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> object.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.String)">
+			<summary>执行不返回结果集的一个语句。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the total number of rows affected by the Transact-SQL command for UPDATE, INSERT, and DELETE statements. For all other types of statements, the return value is -1.</returns>
+			<param name="sqlCommand">A <see cref="T:System.String" /> value that specifies the Transact-SQL command to be executed.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.Collections.Specialized.StringCollection)">
+			<summary>执行不返回结果集的一批语句。</summary>
+			<returns>An <see cref="T:System.Int32" /> array value that specifies the total number of rows affected by each element of the <see cref="T:System.Collections.Specialized.StringCollection" /> object used as the sqlCommands parameter. The return value specifies the total number of rows affected by the Transact-SQL command for UPDATE, INSERT, and DELETE statements. For all other types of statements, the return value is -1.</returns>
+			<param name="sqlCommands">A <see cref="T:System.Collections.Specialized.StringCollection" /> system object value that specifies the batches of Transact-SQL statements to be executed. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.String,Microsoft.SqlServer.Management.Common.ExecutionTypes)">
+			<summary>执行不返回结果集、带指定执行选项的一个语句。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the total number of rows affected by the Transact-SQL command for UPDATE, INSERT, and DELETE statements. For all other types of statements, the return value is -1.</returns>
+			<param name="sqlCommand">A <see cref="T:System.String" /> value that specifies the Transact-SQL command to be executed.</param>
+			<param name="executionType">An <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionTypes" /> object value that specifies the execution options for the Transact-SQL statement.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.Collections.Specialized.StringCollection,Microsoft.SqlServer.Management.Common.ExecutionTypes)">
+			<summary>执行不返回结果集、带指定执行选项的一批语句。</summary>
+			<returns>An <see cref="T:System.Int32" /> array value that specifies the total number of rows affected by each element of the <see cref="T:System.Collections.Specialized.StringCollection" /> object used as the sqlCommands parameter. The return value specifies the total number of rows affected by the Transact-SQL command for UPDATE, INSERT, and DELETE statements. For all other types of statements, the return value is -1.</returns>
+			<param name="sqlCommands">A <see cref="T:System.Collections.Specialized.StringCollection" /> system object value that specifies the batches of Transact-SQL statements to be executed. </param>
+			<param name="executionType">An <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionTypes" /> object value that specifies the execution options for the Transact-SQL statement.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteReader(System.String)">
+			<summary>执行返回一个或多个结果集的 Transact-SQL 语句。</summary>
+			<returns>A <see cref="T:System.Data.SqlClient.SqlDataReader" /> object value that contains one or more result sets.</returns>
+			<param name="sqlCommand">A <see cref="T:System.String" /> value that specifies the Transact-SQL command to be executed.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteScalar(System.String)">
+			<summary>执行一个 Transact-SQL 语句并返回第一行的第一列作为对象值。</summary>
+			<returns>An <see cref="T:System.Object" /> system object value that specifies the first column of the first row of the result set.</returns>
+			<param name="sqlCommand">A <see cref="T:System.String" /> value that specifies the Transact-SQL command to be executed.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteScalar(System.Collections.Specialized.StringCollection)">
+			<summary>执行一批 Transact-SQL 语句并返回第一行的第一列作为对象值。</summary>
+			<returns>An object array value that specifies the first column of the first row for each result set.</returns>
+			<param name="sqlCommands">A <see cref="T:System.Collections.Specialized.StringCollection" /> system object value that specifies the batches of Transact-SQL statements to be executed.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteWithResults(System.String)">
+			<summary>执行返回一个结果集的一个 Transact-SQL 语句。</summary>
+			<returns>A <see cref="T:System.Data.DataSet" /> system object value that contains the result set.</returns>
+			<param name="sqlCommand">A <see cref="T:System.String" /> value that specifies the Transact-SQL command to be executed.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteWithResults(System.Collections.Specialized.StringCollection)">
+			<summary>执行返回多个结果集的一批 Transact-SQL 语句。</summary>
+			<returns>A <see cref="T:System.Data.DataSet" /> system object array value that contains multiple result sets.</returns>
+			<param name="sqlCommands">A <see cref="T:System.Collections.Specialized.StringCollection" /> system object value that specifies the batches of Transact-SQL statements to be executed.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.IsInFixedServerRole(Microsoft.SqlServer.Management.Common.FixedServerRoles)">
+			<summary>测试与引用的连接关联的登录名是否为指定的固定服务器角色的成员。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the logon is a member of the specified fixed server role.If True, the logon is a member of the specified fixed server role.If False, the logon is not a member of the specified fixed server role.</returns>
+			<param name="fixedServerRole">A <see cref="P:Microsoft.SqlServer.Management.Common.FixedServerRoles" /> object value that specifies the fixed server role to be compared with the logon.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.RollBackTransaction">
+			<summary>回滚当前事务。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.BatchSeparator">
+			<summary>获取或设置用于分隔引用的连接中的批次的字符串值。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the batch separator for the referenced connection. The default value is "GO".</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.FixedServerRoles">
+			<summary>获取与引用的连接关联的固定服务器角色。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.FixedServerRoles" /> object value that specifies the fixed server role associated with the referenced connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.ProcessID">
+			<summary>获取唯一标识与服务器的引用连接关联的进程的 ID 值。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the ID value that uniquely identifies the process associated with the referenced connection to the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.SqlExecutionModes">
+			<summary>获取或设置与服务器的引用连接关联的执行模式。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.SqlExecutionModes" /> object value that specifies the execution mode associated with the referenced connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.StatementTimeout">
+			<summary>获取或设置在因为超时错误而失败之前提供语句来运行的最大秒数。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the number of seconds a statement is given to run before failing with a time-out error.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.TransactionDepth">
+			<summary>获取引用的连接的当前事务深度。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the current transaction depth for the referenced connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.TrueLogin">
+			<summary>获取引用的连接使用的当前登录记录名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the current logon record name used by the referenced connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.TrueName">
+			<summary>获取服务器的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.UserProfile">
+			<summary>获取与引用的连接关联的用户配置文件。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.ServerUserProfiles" /> object value that specifies the user profile associated with the referenced connection.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" /> 类表示引发服务器消息事件时使用的参数。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs.#ctor(System.Data.SqlClient.SqlError)">
+			<summary>使用指定的错误为指定的事件初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" /> 类的新实例。</summary>
+			<param name="sqlError">A <see cref="T:System.Data.SqlClient.SqlError" /> system object value that specifies the error associated with the server message event.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs.ToString">
+			<summary>返回表示 <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" /> 对象的 <see cref="T:System.String" />。</summary>
+			<returns>A <see cref="T:System.String" /> that represents the <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs.Error">
+			<summary>获取与服务器消息事件关联的错误。</summary>
+			<returns>A <see cref="T:System.Data.SqlClient.SqlError" /> system object value that specifies the error associated with the server message event.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerMessageEventHandler">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventHandler" /> 类表示处理由服务器消息引发的事件的方法。</summary>
+			<param name="sender">An <see cref="T:System.Object" /> system object value that specifies the object that raised the event.</param>
+			<param name="e">An <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" /> value that specifies the arguments passed to the event handler.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerType">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ServerType" /> 枚举包含指定不同类型的 SQL Server 服务的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerType.AnalysisServices">
+			<summary>
+        Analysis Services
+      </summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerType.DatabaseEngine">
+			<summary>
+        SQL Server 数据库引擎
+      </summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerType.IntegrationServices">
+			<summary>
+        Integration Services
+      </summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerUserProfiles">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ServerUserProfiles" /> 枚举包含用来在服务器上指定用户配置文件的值。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.All">
+			<summary>所有配置文件类型。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.CreateDatabase">
+			<summary>创建“创建数据库”配置文件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.CreateXP">
+			<summary>创建“创建扩展存储过程”配置文件。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.None">
+			<summary>不创建配置文件。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.ServerVersion">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> 类表示服务器的版本信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.#ctor(System.Int32,System.Int32)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> 类的新实例。</summary>
+			<param name="major">An <see cref="T:System.Int32" /> value that specifies the major part of the server version number.</param>
+			<param name="minor">An <see cref="T:System.Int32" /> value that specifies the minor part of the server version number.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.#ctor(System.Int32,System.Int32,System.Int32)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> 类的新实例。</summary>
+			<param name="major">An <see cref="T:System.Int32" /> value that specifies the major part of the server version number.</param>
+			<param name="minor">An <see cref="T:System.Int32" /> value that specifies the minor part of the server version number.</param>
+			<param name="buildNumber">An <see cref="T:System.Int32" /> value that specifies the build number part of the server version number.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.ToString">
+			<summary>返回字符串格式的对象。</summary>
+			<returns>An <see cref="T:System.String" /> value that specifies the object in string format.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerVersion.BuildNumber">
+			<summary>获取服务器版本信息中的内部版本号。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the build number part of the server version information.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerVersion.Major">
+			<summary>获取服务器版本信息中的内部版本号。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the build number part of the server version information.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.ServerVersion.Minor">
+			<summary>获取服务器版本信息中的内部版本号。</summary>
+			<returns>An <see cref="T:System.Int32" /> value that specifies the build number part of the server version information.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 对象表示与 SQL Server 实例建立连接所需的信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(Microsoft.SqlServer.Management.Common.SqlConnectionInfo)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 类的新实例。</summary>
+			<param name="conn">A <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object value that specifies the object on which to base the new <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(System.String)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 类的新实例。</summary>
+			<param name="serverName">A <see cref="T:System.String" /> object value that specifies the instance of SQL Server.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(Microsoft.SqlServer.Management.Common.ServerConnection,Microsoft.SqlServer.Management.Common.ConnectionType)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 类的新实例。</summary>
+			<param name="serverConnection">A <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" /> object value that specifies an existing connection on which to base the new <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object.</param>
+			<param name="connectionType">A <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" /> object value that specifies the type of connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(System.String,System.String,System.String)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 类的新实例。</summary>
+			<param name="serverName">A <see cref="T:System.String" /> object value that specifies the instance of SQL Server.</param>
+			<param name="userName">A <see cref="T:System.String" /> object value that specifies the user who is connected to the instance of SQL Server.</param>
+			<param name="password">A <see cref="T:System.String" /> object value that specifies the password supplied by the user to connect to the instance of SQL Server.</param>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.DefaultNetworkProtocol">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.NetworkProtocol" /> 对象，用于指定连接的默认网络协议。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.Copy">
+			<summary>返回 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 对象的副本。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object value that specifies the copy of the original, referenced <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.CreateConnectionObject">
+			<summary>创建系统连接对象。</summary>
+			<returns>A <see cref="T:System.Data.IDbConnection" /> system object value that specifies the connection object.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ToString">
+			<summary>返回字符串格式的 <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> 对象。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ApplicationName">
+			<summary>获取或设置连接到 SQL Server 实例的应用程序的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the application.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ConnectionProtocol">
+			<summary>获取或设置用于连接到 SQL Server 实例的网络协议。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.Management.Common.NetworkProtocol" /> value that specifies the network protocol used by the connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ConnectionString">
+			<summary>获取与 SQL Server 实例建立连接时使用的连接字符串。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the connection string used to establish the connection to the instance of SQL Server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.EncryptConnection">
+			<summary>获取或设置 <see cref="T:System.Boolean" /> 属性值，该值指定是否对连接信息进行加密。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection information is encrypted.If True, the connection information is encrypted.If False (default), the connection information is not encrypted.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.MaxPoolSize">
+			<summary>获取或设置连接接受的线程池中的最大执行线程数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the maximum number of threads in a thread pool the connection will accept.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.MinPoolSize">
+			<summary>获取或设置连接接受的线程池中的最小执行线程数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the minimum number of threads in a thread pool the connection will accept.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.PacketSize">
+			<summary>获取或设置该连接用来发送和接收数据的网络数据包大小（字节）。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the network packet sized used by the connection in bytes.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.PoolConnectionLifeTime">
+			<summary>获取或设置池连接期（秒）。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the pool connection period in seconds.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.Pooled">
+			<summary>获取或设置 <see cref="T:System.Data.SqlTypes.SqlBoolean" /> 属性值，该值指定连接是否已入池。</summary>
+			<returns>A <see cref="T:System.Data.SqlTypes.SqlBoolean" /> value that specifies whether the connection is pooled.If True, the connection is pooled.If False (default), the connection is not pooled.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.WorkstationId">
+			<summary>获取或设置唯一标识客户端工作站的值。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the value that uniquely identifies the client workstation.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.SqlExecutionModes">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.SqlExecutionModes" /> 枚举包含的值用于指定是立即执行发送到服务器的引用连接的命令还是将它们保存到缓冲区。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlExecutionModes.CaptureSql">
+			<summary>
+            将发送到服务器的引用连接的 Transact-SQL 语句保存到缓冲区。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlExecutionModes.ExecuteAndCaptureSql">
+			<summary>
+            将发送到服务器的引用连接的 Transact-SQL 语句保存到缓冲区，同时转发给该服务器以便立即执行。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlExecutionModes.ExecuteSql">
+			<summary>
+            将发送到服务器的引用连接的 Transact-SQL 语句转发给该服务器以便立即执行。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类表示用于连接到 SQL Server 实例的信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.ConnectionType)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类的新实例。</summary>
+			<param name="serverType">A <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" /> object value that specifies the type of connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类的新实例。</summary>
+			<param name="conn">A <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> object value on which to base the new object.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(System.String,Microsoft.SqlServer.Management.Common.ConnectionType)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类的新实例。</summary>
+			<param name="serverName">A <see cref="T:System.String" /> value that specifies the instance of SQL Server.</param>
+			<param name="serverType">A <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" /> object value that specifies the type of connection.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(System.String,System.String,System.String,Microsoft.SqlServer.Management.Common.ConnectionType)">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> 类的新实例。</summary>
+			<param name="serverName">A <see cref="T:System.String" /> value that specifies the instance of SQL Server.</param>
+			<param name="userName">A <see cref="T:System.String" /> value that specifies the user name.</param>
+			<param name="password">A <see cref="T:System.String" /> value that specifies the password.</param>
+			<param name="serverType">A <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" /> object value that specifies the type of connection.</param>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DefaultConnTimeout">
+			<summary>指定默认连接超时期（秒）的 <see cref="T:System.Int32" />。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DefaultQueryTimeout">
+			<summary>指定默认查询超时期（秒）的 <see cref="T:System.Int32" />。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.NoTimeOut">
+			<summary>指定无超时的 <see cref="T:System.Int32" />。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionParmsChanged">
+			<summary>更改连接参数。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.CreateConnectionObject">
+			<summary>创建连接对象并返回 <see cref="T:System.Data.IDbConnection" /> 对象值。</summary>
+			<returns>A <see cref="T:System.Data.IDbConnection" /> value that specifies the connection object.</returns>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ToString">
+			<summary>将对象作为字符串值返回。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionString">
+			<summary>获取连接字符串。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the connection string.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionStringInternal">
+			<summary>获取或设置内部连接字符串。</summary>
+			<returns>A <see cref="T:System.Text.StringBuilder" /> value that specifies the internal connection string.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionTimeout">
+			<summary>获取或设置连接超时之前等待的秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the connection timeout period.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionTimeoutInternal">
+			<summary>获取或设置内部连接超时期（秒）。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the internal connection timeout period.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DatabaseName">
+			<summary>获取或设置与之建立连接的数据库。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the database to which the connection is established.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DatabaseNameInternal">
+			<summary>获取或设置内部数据库名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the internal database name.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.IntegratedSecurityInternal">
+			<summary>获取或设置布尔属性值，该值指定连接是否支持集成安全性。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection supports integrated security.If True, the connection supports integrated security.If False (default), the connection does not support integrated security.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.Password">
+			<summary>获取或设置用于建立连接的密码。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the password used to establish a connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.QueryTimeout">
+			<summary>获取或设置查询超时之前等待的秒数。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the query timeout period.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.QueryTimeoutInternal">
+			<summary>获取或设置内部查询超时期（秒）。</summary>
+			<returns>A <see cref="T:System.Int32" /> value that specifies the internal query timeout period.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.SecurePassword">
+			<summary>获取或设置用于建立连接的安全密码。</summary>
+			<returns>A <see cref="T:System.Security.SecureString" /> value that specifies the password used to establish a connection.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ServerName">
+			<summary>获取或设置 SQL Server 实例的名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the instance of SQL Server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ServerNameInternal">
+			<summary>获取或设置 SQL Server 实例的内部名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the internal name of the instance of SQL Server.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.UseIntegratedSecurity">
+			<summary>获取或设置布尔属性值，该值指定连接是否使用集成安全性。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value that specifies whether the connection uses integrated security.If True, the connection does not use integrated security.If False (default), the connection does use integrated security.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.UserName">
+			<summary>获取或设置连接到 SQL Server 实例的用户。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the user that is connecting to the instance of SQL Server.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" /> 类是在服务器连接上遇到 SQL Server 管理错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用指定的序列化信息和流上下文初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" /> 类的新实例。</summary>
+			<param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo" /> system object value that specifies the serialization information associated with the exception.</param>
+			<param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext" /> system object value that specifies the streaming context associated with the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.SqlServerManagementException.ProductName">
+			<summary>获取导致异常的产品名称。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the name of the product that caused the exception.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.StatementEventArgs">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" /> 类表示引发语句事件时使用的参数。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.StatementEventArgs.#ctor(System.String,System.DateTime)">
+			<summary>在指定的时间和日期为指定的 Transact-SQL 语句初始化 <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" /> 类的新实例。</summary>
+			<param name="sqlStatement">A <see cref="T:System.String" /> value that specifies the Transact-SQL statement that caused the statement event.</param>
+			<param name="timeStamp">A <see cref="T:System.DateTime" /> system object value that specifies the time and date of the statement event.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.StatementEventArgs.ToString">
+			<summary>返回表示 <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" /> 对象的 <see cref="T:System.String" /> 值。</summary>
+			<returns>A <see cref="T:System.String" /> value that represents the <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.StatementEventArgs.SqlStatement">
+			<summary>获取导致语句事件的 Transact-SQL 语句。</summary>
+			<returns>A <see cref="T:System.String" /> value that specifies the Transact-SQL statement that caused the statement event.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.Management.Common.StatementEventArgs.TimeStamp">
+			<summary>获取语句事件发生的时间和日期。</summary>
+			<returns>A <see cref="T:System.DateTime" /> system object value that specifies the time and date when the statement event occurred.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.StatementEventHandler">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.StatementEventHandler" /> 类表示处理由语句引发的事件的方法。</summary>
+			<param name="sender">An <see cref="T:System.Object" /> system object value that specifies the object that raised the event.</param>
+			<param name="e">An <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" /> value that specifies the arguments passed to the event handler.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.Management.Common.TransferException">
+			<summary><see cref="T:Microsoft.SqlServer.Management.Common.TransferException" /> 类是在服务器连接上遇到 SQL Server 传输错误时引发的异常。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor">
+			<summary>初始化 <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" /> 类的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor(System.String)">
+			<summary>使用指定的消息文本初始化 <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text describing the event that caused the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+			<summary>使用指定的序列化信息和流上下文初始化 <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" /> 类的新实例。</summary>
+			<param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo" /> system object value that specifies the serialization information associated with the exception.</param>
+			<param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext" /> system object value that specifies the streaming context associated with the exception.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor(System.String,System.Exception)">
+			<summary>使用指定的消息文本和内部异常初始化 <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" /> 类的新实例。</summary>
+			<param name="message">A <see cref="T:System.String" /> value that specifies the message text that describes the event that caused the exception.</param>
+			<param name="innerException">An <see cref="T:System.Exception" /> object that contains the inner exception. This is used for situations when one exception causes another exception to be raised. </param>
+		</member>
+	</members>
+</doc>

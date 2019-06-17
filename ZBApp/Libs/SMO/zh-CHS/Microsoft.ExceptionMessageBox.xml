@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.ExceptionMessageBox</name>
+	</assembly>
+	<members>
+		<member name="N:Microsoft.SqlServer.MessageBox">
+			<summary>异常消息框是一种编程接口，随 Microsoft SQL Server 2005 图形组件一起安装并由组件使用。异常消息框是可在您的自定义应用程序中使用的支持的接口，它与 <see cref="T:System.Windows.Forms.MessageBox" /> 类相比，可以大大提高对消息传送的控制。它还使您的用户能够选择是否保存错误消息内容以供以后参考以及获取有关消息的帮助。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs">
+			<summary>在 <see cref="E:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.OnCopyToClipboard" /> 事件发生时返回信息。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs.#ctor">
+			<summary>使用默认属性创建 <see cref="T:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs" /> 的新实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs.#ctor(System.String)">
+			<summary>使用指定的复制文本创建 <see cref="T:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs" /> 的新实例。</summary>
+			<param name="clipboardText">Error message information being copied.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs.ClipboardText">
+			<summary>获取要复制的错误消息信息。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs.EventHandled">
+			<summary>获取或设置是否处理 <see cref="E:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.OnCopyToClipboard" /> 事件。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.CopyToClipboardEventHandler">
+			<summary>处理在将错误信息复制到剪贴板时发生的 <see cref="E:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.OnCopyToClipboard" /> 事件的委托。</summary>
+			<param name="sender">The source of the status event.</param>
+			<param name="e">A <see cref="T:Microsoft.SqlServer.MessageBox.CopyToClipboardEventArgs" /> object that contains the event data.</param>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox">
+			<summary>显示一个消息框，可以使用文本、按钮和符号自定义该消息框，以便改进基于 Microsoft Windows .NET Framework 的应用程序的客户体验。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor">
+			<summary>使用默认属性创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.Exception)">
+			<summary>通过使用来自指定 <see cref="T:System.Exception" /> 的信息创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="exception"><see cref="T:System.Exception" /> that contains the top-level text, inner exception text, caption, data, help link, and optional additional information to display in the exception message box.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.String)">
+			<summary>使用提供的顶级错误消息文本创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="text">Error text of the top-level message.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.Exception,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons)">
+			<summary>通过使用来自指定 <see cref="T:System.Exception" /> 的信息以及通过指定要在消息框中显示的按钮，创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="exception"><see cref="T:System.Exception" /> that contains the top-level text, inner exception text, caption, data, help link, and optional additional information to display in the exception message box.</param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the message box. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.String,System.String)">
+			<summary>使用提供的顶级错误消息文本以及异常消息框的对话框标题创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="text">Error text of the top-level message.</param>
+			<param name="caption">Caption of the exception message box. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.Exception,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol)">
+			<summary>通过使用来自指定 <see cref="T:System.Exception" /> 的信息以及通过指定要在消息框中显示的按钮和符号，创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="exception"><see cref="T:System.Exception" /> that contains the top-level text, inner exception text, caption, data, help link, and optional additional information to display in the exception message box.</param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the exception message box. </param>
+			<param name="symbol"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol" /> enumeration that specifies the symbol to display in the exception message box. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.String,System.String,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons)">
+			<summary>使用提供的顶级错误消息文本以及异常消息框的对话框标题创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。该方法还指定要在异常消息框中显示的按钮。</summary>
+			<param name="text">Error text of the top-level message.</param>
+			<param name="caption">Caption of the exception message box. </param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the exception message box. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.Exception,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton)">
+			<summary>通过使用来自指定 <see cref="T:System.Exception" /> 的信息以及通过指定要在异常消息框中显示的按钮、符号和默认按钮，创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="exception"><see cref="T:System.Exception" /> that contains the top-level text, inner exception text, caption, data, help link, and optional additional information to display in the exception message box. </param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the exception message box. </param>
+			<param name="symbol"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol" /> enumeration that specifies the symbol to display in the exception message box. </param>
+			<param name="defaultButton"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton" /> enumeration that specifies the default button for the exception message box. </param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.String,System.String,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol)">
+			<summary>使用提供的顶级错误消息文本以及异常消息框的对话框标题创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。该方法还指定要在异常消息框中显示的按钮和符号。</summary>
+			<param name="text">Error text of the top-level message.</param>
+			<param name="caption">Dialog box caption of the exception message box. </param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the exception message box. </param>
+			<param name="symbol"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol" /> enumeration that specifies the symbol to display in the exception message box.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.Exception,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions)">
+			<summary>通过使用来自指定 <see cref="T:System.Exception" /> 的信息以及通过指定要在异常消息框中显示的按钮、符号、默认按钮和其他属性，创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。</summary>
+			<param name="exception"><see cref="T:System.Exception" /> that contains the top-level text, inner exception text, caption, data, help link, and optional additional information to display in the exception message box.</param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the exception message box. </param>
+			<param name="symbol"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol" /> enumeration that specifies the symbol to display in the exception message box.</param>
+			<param name="defaultButton"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton" /> enumeration that specifies the default button for the exception message box.</param>
+			<param name="options">The <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions" /> enumeration that controls other behaviors of the exception message box.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.#ctor(System.String,System.String,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol,Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton)">
+			<summary>使用提供的顶级错误消息文本以及消息框的对话框标题创建 <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBox" /> 的实例。该方法还指定要在异常消息框中显示的按钮、符号和默认按钮。</summary>
+			<param name="text">Error text of the top-level message.</param>
+			<param name="caption">Dialog box caption of the exception message box. </param>
+			<param name="buttons"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> enumeration that specifies the buttons to display in the exception message box. </param>
+			<param name="symbol"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol" /> enumeration that specifies the symbol to display in the exception message box.</param>
+			<param name="defaultButton"><see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton" /> enumeration that specifies the default button for the exception message box.</param>
+		</member>
+		<member name="E:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.OnCopyToClipboard">
+			<summary>在将异常消息文本从消息框复制到剪贴板时发生。</summary>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.GetMessageText(System.Exception)">
+			<summary>返回在异常消息框中显示异常时，用户可以复制到剪贴板的字符串。</summary>
+			<returns><see cref="T:System.String" /> that contains the full content of the message.</returns>
+			<param name="exception">An <see cref="T:System.Exception" /> object.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.SetButtonText(System.String)">
+			<summary>设置当异常消息框中只显示一个按钮时自定义文本按钮的文本。</summary>
+			<param name="button1Text">Text for the first custom button.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.SetButtonText(System.String,System.String)">
+			<summary>设置当异常消息框中只显示两个按钮时自定义文本按钮的文本。</summary>
+			<param name="button1Text">Text for the first custom button.</param>
+			<param name="button2Text">Text for the second custom button.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.SetButtonText(System.String,System.String,System.String)">
+			<summary>设置当异常消息框中只显示三个按钮时自定义文本按钮的文本。</summary>
+			<param name="button1Text">Text for the first custom button.</param>
+			<param name="button2Text">Text for the second custom button.</param>
+			<param name="button3Text">Text for the third custom button.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.SetButtonText(System.String,System.String,System.String,System.String)">
+			<summary>设置当异常消息框中只显示四个按钮时自定义文本按钮的文本。</summary>
+			<param name="button1Text">Text for the first custom button.</param>
+			<param name="button2Text">Text for the second custom button.</param>
+			<param name="button3Text">Text for the third custom button.</param>
+			<param name="button4Text">Text for the fourth custom button.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.SetButtonText(System.String,System.String,System.String,System.String,System.String)">
+			<summary>设置当异常消息框中只显示五个按钮时自定义文本按钮的文本。</summary>
+			<param name="button1Text">Text for the first custom button.</param>
+			<param name="button2Text">Text for the second custom button.</param>
+			<param name="button3Text">Text for the third custom button.</param>
+			<param name="button4Text">Text for the fourth custom button.</param>
+			<param name="button5Text">Text for the fifth custom button.</param>
+		</member>
+		<member name="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Show(System.Windows.Forms.IWin32Window)">
+			<summary>将异常消息框显示为在父窗口上居中的模式对话框。</summary>
+			<returns>The <see cref="T:System.Windows.Forms.DialogResult" /> of the button clicked by the user. </returns>
+			<param name="Owner">Parent window for the exception message box.</param>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.AbortButtonText">
+			<summary>获取“中止”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Beep">
+			<summary>指定在显示消息时是否播放可听到的声音。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Buttons">
+			<summary>获取或设置要在消息框中显示的按钮。</summary>
+			<returns>An <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons" /> value. </returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CancelButtonText">
+			<summary>获取“取消”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Caption">
+			<summary>获取或设置异常消息框的对话框标题。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CheckBoxRegistryKey">
+			<summary>设置打开的 <see cref="T:Microsoft.Win32.RegistryKey" />，它在 <see cref="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.ShowCheckbox" /> 为 true 时控制在异常消息框上显示的复选框。</summary>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CheckBoxRegistryMeansDoNotShowDialog">
+			<summary>确定 <see cref="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CheckBoxRegistryKey" /> 和 <see cref="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CheckBoxRegistryValue" /> 指定的注册表值内容是否指示以前的用户决定不查看此消息。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CheckBoxRegistryValue">
+			<summary>或者或设置注册表值名称，它在 <see cref="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.ShowCheckbox" /> 为 true 时控制异常消息框上的复选框。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CheckBoxText">
+			<summary>或者或设置在 <see cref="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.ShowCheckbox" /> 为 true 时要在异常消息框上的复选框中显示的文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CustomDialogResult">
+			<summary>获取所单击的自定义文本对话框按钮。</summary>
+			<returns>A <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.CustomSymbol">
+			<summary>获取或设置要用作异常消息框上的符号的自定义位图。</summary>
+			<returns>A <see cref="T:System.Drawing.Bitmap" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Data">
+			<summary>获取将存储与顶级消息相关联的帮助链接和高级信息的 <see cref="T:System.Collections.IDictionary" /> 接口。</summary>
+			<returns>An <see cref="T:System.Collections.IDictionary" /> interface.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.DefaultButton">
+			<summary>获取或设置消息框上的默认按钮。</summary>
+			<returns>An <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.DefaultDialogResult">
+			<summary>获取或设置当用户以前已经指出不再显示给定的消息时，<see cref="M:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Show(System.Windows.Forms.IWin32Window)" /> 方法的返回值。</summary>
+			<returns>An <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.FailButtonText">
+			<summary>获取“失败”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Font">
+			<summary>获取或设置用于消息框中的字体。</summary>
+			<returns>A <see cref="T:System.Drawing.Font" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.HelpLink">
+			<summary>获取或设置指向与顶级消息相关联的帮助文件或帮助网页的链接。</summary>
+			<returns>A <see cref="T:System.String" /> URL value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.IgnoreButtonText">
+			<summary>获取“忽略”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.InnerException">
+			<summary>获取或设置与较低级别消息相关联的 <see cref="T:System.Exception" /> 实例。</summary>
+			<returns>An <see cref="T:System.Exception" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.IsCheckBoxChecked">
+			<summary>指定在 <see cref="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.ShowCheckbox" /> 为 true 时是否选中复选框。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Message">
+			<summary>获取或设置包含要显示的消息的 <see cref="T:System.Exception" />。</summary>
+			<returns>An <see cref="T:System.Exception" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.MessageLevelDefault">
+			<summary>获取或设置要在消息框中显示的消息级别的数目。</summary>
+			<returns>An <see cref="T:System.Int32" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.NoButtonText">
+			<summary>获取“否”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.OKButtonText">
+			<summary>获取“确定”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Options">
+			<summary>获取或设置消息框的其他显示选项</summary>
+			<returns>An <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.RetryButtonText">
+			<summary>获取“重试”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.ShowCheckBox">
+			<summary>指定是否在异常消息框中显示复选框。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.ShowToolBar">
+			<summary>指定是否在异常消息框上显示命令按钮工具栏。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Symbol">
+			<summary>获取或设置要在异常消息框中显示的符号。</summary>
+			<returns>An <see cref="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol" /> object.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.Text">
+			<summary>获取或设置要在异常消息框中显示的顶级消息的文本</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.UseOwnerFont">
+			<summary>指定是否检索所有者窗口的字体并将其用作异常消息框的字体。</summary>
+			<returns>A <see cref="T:System.Boolean" /> value.</returns>
+		</member>
+		<member name="P:Microsoft.SqlServer.MessageBox.ExceptionMessageBox.YesButtonText">
+			<summary>获取“是”按钮的默认文本。</summary>
+			<returns>A <see cref="T:System.String" /> value.</returns>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons">
+			<summary>指定要在异常消息框中显示的按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.AbortRetryIgnore">
+			<summary>显示“中止”、“重试”和“忽略”按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.Custom">
+			<summary>显示带有自定义按钮文本的按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.OK">
+			<summary>显示“确定”按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.OKCancel">
+			<summary>显示“确定”和“取消”按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.RetryCancel">
+			<summary>显示“重试”和“取消”按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.YesNo">
+			<summary>显示“是”和“否”按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxButtons.YesNoCancel">
+			<summary>显示“是”、“否”和“取消”按钮。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton">
+			<summary>设置异常消息框中的默认按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton.Button1">
+			<summary>第一个按钮是默认按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton.Button2">
+			<summary>第二个按钮是默认按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton.Button3">
+			<summary>第三个按钮是默认按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton.Button4">
+			<summary>第四个按钮是默认按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDefaultButton.Button5">
+			<summary>第五个按钮是默认按钮。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult">
+			<summary>标识当使用自定义文本按钮时用户单击以关闭异常消息框的按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult.Button1">
+			<summary>第一个自定义文本按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult.Button2">
+			<summary>第二个自定义文本按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult.Button3">
+			<summary>第三个自定义文本按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult.Button4">
+			<summary>第四个自定义文本按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult.Button5">
+			<summary>第五个自定义文本按钮。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxDialogResult.None">
+			<summary>不使用自定义文本按钮。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions">
+			<summary>指定异常消息框的杂项显示选项。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions.None">
+			<summary>不需要其他行为。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions.RightAlign">
+			<summary>显示右对齐的文本。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxOptions.RtlReading">
+			<summary>显示从右向左读取的文本。</summary>
+		</member>
+		<member name="T:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol">
+			<summary>指定在异常消息框中显示的符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Asterisk">
+			<summary>系统星号符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Error">
+			<summary>系统错误符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Exclamation">
+			<summary>系统感叹号符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Hand">
+			<summary>系统手形符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Information">
+			<summary>系统信息符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.None">
+			<summary>无符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Question">
+			<summary>系统问号符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Stop">
+			<summary>系统停止标志符号。</summary>
+		</member>
+		<member name="F:Microsoft.SqlServer.MessageBox.ExceptionMessageBoxSymbol.Warning">
+			<summary>系统警告符号。</summary>
+		</member>
+	</members>
+</doc>
