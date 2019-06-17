@@ -10,6 +10,7 @@ namespace ZB.Console.Tests
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("aaa");
         }
     }
 }
