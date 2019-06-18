@@ -1,0 +1,90 @@
+﻿<#@ template language="C#" hostspecific="True" debug="false"#>
+<#@include file="Manager.ttinclude"#>
+<#@include file="DbHelper.ttinclude"#>
+
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="System.Data.DataSetExtensions.dll" #>
+<#@ assembly name="System.Xml.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+
+
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+
+
+<#
+			//你的当前model的命名空间
+            string ModelNameSpace="ZB.Common.Data";
+		
+			List<DbTable> tables = DbHelper.GetDbTables(config.ConnectionString,config.DbDatabase);
+            foreach (var table in tables)
+            {
+				 manager.StartNewFile(table.TableName +".cs");
+				#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using ZB.Framework.ObjectMapping;
+namespace <#=ModelNameSpace#>
+{
+	[Table]
+    public  partial class <#=table.TableName#>:ObjectMappingBase<<#=table.TableName  #>, int>
+    {
+		<# foreach(DbColumn column in DbHelper.GetDbColumns(config.ConnectionString, config.DbDatabase, table.TableName)){#>
+		<# 
+		 string columnAttr="[Column]";
+         if (column.IsPrimaryKey)
+         {
+			 columnAttr="[Column(IsPK=true)]";
+             if (column.IsIdentity)
+             {
+				columnAttr="[Column(IsPK=true,IsAutoIncrement = true)]";
+             }else
+             {
+				columnAttr="[Column(IsPK=true,IsUseSeedFactory = true)]";
+             }   
+		 }
+		
+		#>
+		
+		<#= columnAttr #>
+        public <#= column.CSharpType#><# if(column.CommonType.IsValueType && column.IsNullable){#>?<#}#> <#=column.ColumnName#> { get; set; }
+        <#}#> 
+    }
+}
+
+<#
+				//Extend文件
+				manager.StartNewFile(table.TableName +"Extend.cs");  #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+public  partial class <#=table.TableName#>
+{
+}
+
+
+<#              //代码结束
+                manager.EndBlock();
+            }
+#>
+<# manager.Process(true); #>
+
+
+<#+
+    public class config
+    {
+        public static readonly string ConnectionString="Data Source=192.168.1.8\\sql2012;Initial Catalog=JetCommon_D;User ID=sa;Password=jetmaster;MultipleActiveResultSets=True;";
+        public static readonly string DbDatabase="JetCommon_D";
+        public static readonly string TableName="Employee";
+    }
+#>

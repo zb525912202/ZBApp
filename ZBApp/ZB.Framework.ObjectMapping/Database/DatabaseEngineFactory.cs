@@ -38,7 +38,7 @@ namespace ZB.Framework.ObjectMapping
             }
         }
 
-        public static DatabaseEngine GetDatabaseEngine(string databasename,bool isIgnoreDatabaseName = true)
+        public static DatabaseEngine GetDatabaseEngine(string databasename, bool isIgnoreDatabaseName = true)
         {
             lock (LockedObject)
             {
@@ -46,7 +46,7 @@ namespace ZB.Framework.ObjectMapping
                     databasename = string.Empty;
 
                 DatabaseSession session = null;
-                if(isIgnoreDatabaseName == true)
+                if (isIgnoreDatabaseName == true)
                     session = DatabaseScopeManager.Instance.GetCurrentDatabaseSession();
                 else
                     session = DatabaseScopeManager.Instance.GetCurrentDatabaseSession(databasename);
@@ -54,10 +54,10 @@ namespace ZB.Framework.ObjectMapping
                 EnumDatabaseEngineType enginetype = GetDatabaseEngineType(databasename);
                 switch (enginetype)
                 {
-                    case EnumDatabaseEngineType.Sql2005:engine = new Sql2005DatabaseEngine();break;
+                    case EnumDatabaseEngineType.Sql2005: engine = new Sql2005DatabaseEngine(); break;
                     case EnumDatabaseEngineType.Sql2008: engine = new Sql2008DatabaseEngine(); break;
                     case EnumDatabaseEngineType.Sql2012: engine = new Sql2012DatabaseEngine(); break;
-                    case EnumDatabaseEngineType.GenericDatabase:engine = new GenericDatabaseEngine();break;
+                    case EnumDatabaseEngineType.GenericDatabase: engine = new GenericDatabaseEngine(); break;
                 }
 
                 if (engine != null)
@@ -87,9 +87,14 @@ namespace ZB.Framework.ObjectMapping
                 {
                     Database database = null;
                     if (string.IsNullOrWhiteSpace(databasename))
+                    {
                         database = DatabaseFactory.CreateDatabase();
+                    }
                     else
+                    {
                         database = DatabaseFactory.CreateDatabase(databasename);
+                    }
+
 
                     if (database is SqlDatabase)
                     {

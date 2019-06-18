@@ -51,6 +51,14 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -206,6 +214,8 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="appSettings.config" />
+    <Content Include="ConnectionStrings.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1011,6 +1021,32 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZB.Business.DALBase\ZB.Business.DALBase.csproj">
+      <Project>{13cea70d-5a0a-4002-8a8a-5803ebb43423}</Project>
+      <Name>ZB.Business.DALBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Business.DAL\ZB.Common.DAL.csproj">
+      <Project>{e75457ab-22e9-43a5-902d-7cae14eae323}</Project>
+      <Name>ZB.Common.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Common.Data\ZB.Common.Data.csproj">
+      <Project>{1520a983-11cb-4469-9360-f05a19c0fb99}</Project>
+      <Name>ZB.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.Business\ZB.Framework.Business.csproj">
+      <Project>{8FCF96D5-CAB8-42D4-BBED-AF9CD1093F86}</Project>
+      <Name>ZB.Framework.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.ObjectMapping\ZB.Framework.ObjectMapping.csproj">
+      <Project>{25621F8F-DA2D-457D-AAE2-8523630C8152}</Project>
+      <Name>ZB.Framework.ObjectMapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.Utility\ZB.Framework.Utility.csproj">
+      <Project>{4BCFBF52-ECF2-4895-8716-2BF8B68651E2}</Project>
+      <Name>ZB.Framework.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

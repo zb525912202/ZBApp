@@ -91,6 +91,7 @@
     <Compile Include="Mapping\ColumnAttribute.cs" />
     <Compile Include="Mapping\ColumnMapping.cs" />
     <Compile Include="Mapping\DataInterceptAttribute.cs" />
+    <Compile Include="Mapping\MappingHelper.cs" />
     <Compile Include="Mapping\MappingService.cs" />
     <Compile Include="Mapping\TableAttribute.cs" />
     <Compile Include="Mapping\TableMapping.cs" />

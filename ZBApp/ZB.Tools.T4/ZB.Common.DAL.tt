@@ -1,0 +1,77 @@
+﻿<#@ template language="C#" hostspecific="True" debug="false"#>
+<#@include file="Manager.ttinclude"#>
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Data.DataSetExtensions" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+<#
+if(true)
+{
+//请添加你的项目名称后缀名与对应的命名空间
+ Dictionary<string, string> ProjectDictionary = new Dictionary<string, string>();
+            ProjectDictionary.Add("DAL", "ZB.Common.DAL");
+            //此如果是model层请使用键值Model
+            //ProjectDictionary.Add("Model", "MyTest.Model");
+            //因为UI层apsx页面特殊，暂时不支持。
+            //我想是支持cshtml文件的，但是懒得写了。
+            //ProjectDictionary.Add("UI", "MyTest.UI");
+            List<string> ProjectDictionaryKeyToLower = new List<string>();
+            foreach (string key in ProjectDictionary.Keys)
+            {
+                ProjectDictionaryKeyToLower.Add(key.ToLower());
+            }
+			//你的数据库连接字符串
+            string ConnectStr = "Data Source=192.168.1.8\\sql2012;Initial Catalog=JetCommon_D;User ID=sa;Password=jetmaster;MultipleActiveResultSets=True";
+            SqlConnection MySqlConnection = new SqlConnection(ConnectStr);
+            //此sql语句找到你指定数据库下的所有表
+            string SelectYourTableNameStr = "SELECT * FROM sys.sysobjects WHERE TYPE='U'";
+            SqlDataAdapter MySqlDataAdapter = new SqlDataAdapter(SelectYourTableNameStr, MySqlConnection);
+            DataSet MyDataSet = new DataSet();
+            MySqlDataAdapter.Fill(MyDataSet, "cacheTable");
+            //得到table表
+            DataTable MyDataTable = MyDataSet.Tables["cacheTable"];
+            int MyDataTableRowsCount = MyDataTable.Rows.Count;
+#>
+
+<# //生成其他层文件  #>
+
+<#  
+foreach(string key in ProjectDictionary.Keys)
+{
+
+
+    for (int i = 0; i < MyDataTableRowsCount; i++)
+    { 
+		string tableName=MyDataTable.Rows[i]["name"].ToString();
+manager.StartNewFile(tableName+ key+".cs");
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ZB.Business.DALBase;
+using ZB.Common.Data;
+using ZB.Common.IDAL;
+
+namespace  <#=ProjectDictionary[key]#>
+{
+	public partial class <#=tableName+key#>:DALBase<<#= tableName #>, int>, I<#=tableName  #>DAL<<#= tableName #>, int>
+	{
+
+
+	}
+}
+
+<#manager.EndBlock();#>
+<#}#>
+
+<#}#>
+
+
+<# manager.Process(true); #>
+<#}#>

@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7AAF6C68-F1C9-4ABA-9FE9-42A7DC655CBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZB.Tools.T4</RootNamespace>
+    <AssemblyName>ZB.Tools.T4</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbilityItem.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemCategory.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemCategoryDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemCategoryExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemInSubject.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemInSubjectDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemInSubjectExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemProficiency.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemProficiencyDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AbilityItemProficiencyExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachFileLibary.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachFileLibaryDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachFileLibaryExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuzEmployeeMessage.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuzEmployeeMessageDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuzEmployeeMessageExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuzMessage.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuzMessageDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuzMessageExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertPublisher.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertPublisherDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertPublisherExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertRejectInfo.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertRejectInfoDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertRejectInfoExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTask.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTaskDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTaskDirector.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTaskDirectorDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTaskDirectorExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTaskExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertType.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeKind.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeKindDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeKindExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertTypeLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dept.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeptDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeptExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCert.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertFlow.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertFlowDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertFlowExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertPhoto.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertPhotoDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCertPhotoExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeChangeHistory.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeChangeHistoryDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeChangeHistoryExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeChangeInfo.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeChangeInfoDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeChangeInfoExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeGroup.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeGroupDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeGroupExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInEmployeeGroup.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInEmployeeGroupDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInEmployeeGroupExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInStandard.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInStandardDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInStandardExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeStatus.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeStatusDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeStatusExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FriendLink.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FriendLinkDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FriendLinkExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAbilityItemCategoryDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAbilityItemDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAbilityItemInSubjectDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAbilityItemLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAbilityItemProficiencyDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAttachFileLibaryDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBuzEmployeeMessageDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBuzMessageDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertPublisherDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertRejectInfoDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertTaskDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertTaskDirectorDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertTypeDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertTypeKindDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICertTypeLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IDeptDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeCertDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeCertFlowDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeCertPhotoDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeChangeHistoryDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeChangeInfoDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeGroupDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeInEmployeeGroupDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeInStandardDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IEmployeeStatusDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFriendLinkDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IIPBlackListDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IManageTypeDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMappingDataDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMasteryLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMFolderDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IModuleDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IModuleInProfessionDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IModuleLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INoticeAnnexDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INoticeDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INoticeDeptDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPBlackList.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPBlackListDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPBlackListExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostCategoryDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostCertDemandDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostInProfessionDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostInStandardDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostStandardCertDemandDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostStandardDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostStandardLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostSubjectDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IProfessionCategoryDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IProfessionCategorySystemDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IProfessionDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRoleDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRoleInPrivilegeDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IStandardCategoryDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IStandardLevelInCertTypeLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISyncDataLogDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IsysdiagramsDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISystemConfigDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITableSeedDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITeacherDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITeacherExpertAreaDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITeacherGiveRecordDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITeacherLevelDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainerDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingChapterDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingLessonDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingRequDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingRequIncludeDeptDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingRequIncludeStandardDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingRequResultDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingRequResultDetailDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingSectionDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingSectionInChapterDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingSectionInSubjectDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITrainingSubjectDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IUserAccountDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IUserInRoleDAL.cs">
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManageType.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTypeDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTypeExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MappingData.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MappingDataDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MappingDataExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasteryLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasteryLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasteryLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MFolder.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MFolderDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MFolderExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInProfession.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInProfessionDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInProfessionExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notice.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeAnnex.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeAnnexDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeAnnexExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeDept.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeDeptDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeDeptExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCategory.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCategoryDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCategoryExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCertDemand.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCertDemandDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCertDemandExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInProfession.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInProfessionDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInProfessionExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInStandard.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInStandardDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInStandardExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandard.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardCertDemand.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardCertDemandDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardCertDemandExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostStandardLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostSubject.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostSubjectDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostSubjectExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profession.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionCategory.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionCategoryDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionCategoryExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionCategorySystem.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionCategorySystemDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionCategorySystemExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessionExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInPrivilege.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInPrivilegeDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInPrivilegeExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardCategory.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardCategoryDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardCategoryExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardLevelInCertTypeLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardLevelInCertTypeLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardLevelInCertTypeLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncDataLog.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncDataLogDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncDataLogExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagramsDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagramsExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfig.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TableSeed.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TableSeedDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TableSeedExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExpertArea.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExpertAreaDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExpertAreaExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherGiveRecord.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherGiveRecordDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherGiveRecordExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherLevel.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherLevelDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherLevelExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trainer.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingChapter.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingChapterDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingChapterExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingLesson.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingLessonDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingLessonExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequ.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequIncludeDept.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequIncludeDeptDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequIncludeDeptExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequIncludeStandard.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequIncludeStandardDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequIncludeStandardExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequResult.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequResultDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequResultDetail.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequResultDetailDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequResultDetailExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingRequResultExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSection.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionInChapter.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionInChapterDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionInChapterExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionInSubject.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionInSubjectDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSectionInSubjectExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSubject.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSubjectDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingSubjectExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccountDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccountExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInRole.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInRoleDAL.cs">
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInRoleExtend.cs">
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZB.Common.Data.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZB.Common.Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZB.Common.IDAL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZB.Common.IDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZB.Common.DAL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZB.Common.DAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DbHelper.ttinclude" />
+    <None Include="Manager.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ZB.Common.IDAL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZB.Common.IDAL.cs</LastGenOutput>
+    </Content>
+    <Content Include="ZB.Common.DAL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZB.Common.DAL.cs</LastGenOutput>
+    </Content>
+    <Content Include="ZB.Common.Data.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZB.Common.Data.cs</LastGenOutput>
+      <Parameters>&lt;%3fxml version="1.0" encoding="utf-16"%3f&gt;
+&lt;ArrayOfParameterStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Parameters>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZB.Framework.ObjectMapping\ZB.Framework.ObjectMapping.csproj">
+      <Project>{25621F8F-DA2D-457D-AAE2-8523630C8152}</Project>
+      <Name>ZB.Framework.ObjectMapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.Utility\ZB.Framework.Utility.csproj">
+      <Project>{4BCFBF52-ECF2-4895-8716-2BF8B68651E2}</Project>
+      <Name>ZB.Framework.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

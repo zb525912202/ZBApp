@@ -32,7 +32,7 @@
                      Width="120" />
             <TextBox x:Name="txtPassword"
                      Margin="10,0,0,0"
-                     Text="ZBmaster"
+                     Text="jetmaster"
                      Width="120" />
         
 

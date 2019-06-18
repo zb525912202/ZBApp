@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZB.Common.DAL;
 
 namespace ZB.App.Web.Controllers
 {
@@ -23,8 +24,8 @@ namespace ZB.App.Web.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
+            var emp = EmployeeDAL.Instance.Find(1);
+            return View(emp);
         }
     }
 }

@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ZB.App.Web;
 using ZB.App.Web.Controllers;
+using ZB.Common.DAL;
+using ZB.Common.Data;
 
 namespace ZB.App.Web.Tests.Controllers
 {
@@ -46,9 +48,9 @@ namespace ZB.App.Web.Tests.Controllers
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;
-
+             var emp = result.Model as Employee;
             // Assert
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(emp.Id>0);
         }
     }
 }
