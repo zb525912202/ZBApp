@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UpgradeConfig>
+  <FileUpgradeScript ScriptFileName="001.Resource_2012_6_12.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="002.Common_2012_6_21.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="003.Common_2012_6_26.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="004.Learning_2012_6_29.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="005.Common_2012_7_3.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="006.Resource_2012_7_10.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="007.Exam_2012_7_11.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="008.Learning_2012_7_30.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="009.Learning_2012_7_31.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="010.Resource_2012_8_2.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="011.Exam_2012_8_2.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="012.Learning_2012_8_2.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="013.Common_2012_8_6.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="014.Learning_2012_8_9.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="015.Resource_2012_8_9.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="016.Learning_2012_8_10.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="017.Common_2012_8_15.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="018.Resource_2012_8_17.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="019.Common_2012_8_20.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="020.Learning_2012_8_27.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="021.Resource_2012_8_30.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="022.Common_2012_9_8.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="023.Resource_2012_9_11.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="024.Learning_2012_9_14.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="025.Learning_2012_11_2.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="026.Common_2012_11_9.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="027.Learning_2012_11_9.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="028.Common_2012_11_15.sql" ZBDb="ZBCommon"/>
+
+  <ReBuildUpgradeScript ZBDb="ZBLog"/>
+
+  <FileUpgradeScript ScriptFileName="030.Resource_2012_11_19.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="031.Common_2012_11_24.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="032.Common_2012_11_27.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="033.Resource_2012_11_28.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="034.Exam_2012_12_26.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="035.Learning_2012_12_28.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="036.Common_2013_1_5.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="038.Common_2013_1_14.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="039.Exam_2013_1_14.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="040.Common_2013_1_15.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="041.Common_2013_1_21.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="042.Learning_2013_1_24.sql " ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="043.Common_2013_2_25.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="044.Resource_2013_4_2.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="045.Common_2013_4_10.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="046.Common_2013_5_22.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="047.Resource_2013_5_22.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="048.Exam_2013_5_22.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="049.Learning_2013_5_22.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="050.Learning_2013_5_23.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="051.Learning_2013_5_27.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="052.Learning_2013_5_28.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="053.Exam_2013_6_3.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="054.Common_2013_6_17.sql" ZBDb="ZBCommon"/>
+
+  <ReBuildUpgradeScript ZBDb="ZBDailyLog"/>
+
+  <LearningToDailyLogScript ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="056.Exam_2013_7_2.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="057.Common_2013_7_2.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="058.Vote_2013_7_8.sql" ZBDb="ZBVote"/>
+
+  <FileUpgradeScript ScriptFileName="059.Resource_2013_12_10.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="060.Exam_2013_12_10.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="061.Learning_2013_12_10.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="062.Resource_2013_12_12.sql" ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="063.Exam_2013_12_27.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="064.Learning_2014_1_17.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="065.Common_2014_1_21.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="066.Exam_2014_2_11.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="067.Exam_2014_2_21.sql" ZBDb="ZBExam"/>
+<FileUpgradeScript ScriptFileName="068.Exam_2014_2_24.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="069.Exam_2014_2_26.sql" ZBDb="ZBExam"/>
+
+  <FileUpgradeScript ScriptFileName="070.Exam_2014_3_4.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="071.Common_2014_3_6.sql" ZBDb="ZBCommon"/>
+
+  <FixQFolderScript ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="072.Exam_2014_3_11.sql" ZBDb="ZBExam"/>
+
+  <FileUpgradeScript ScriptFileName="073.Exam_2014_3_24.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="074.Exam_2014_3_25.sql" ZBDb="ZBExam"/>
+
+  <FileUpgradeScript ScriptFileName="075.Common_2014_4_2.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="076.Common_2014_5_4.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="077.Common_2014_5_9.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="078.Learning_2014_6_9.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="079.DailyLog_2014_7_1.sql" ZBDb="ZBDailyLog"/>
+  <FileUpgradeScript ScriptFileName="080.Learning_2014_7_11.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="081.Exam_2014_7_15.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="082.Resource_2014_7_22.sql" ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="083.Exam_2014_9_10.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="084.Common_2014_11_3.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="085.Learning_2015_1_22.sql" ZBDb="ZBLearning"/>
+  <FileUpgradeScript ScriptFileName="086.Learning_2015_1_29.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="087.Common_2015_2_3.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="088.Common_2015_3_5.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="089.Common_2015_3_13.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="090.Learning_2015_4_1.sql" ZBDb="ZBLearning"/>
+
+  <DeptIndexScript ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="091.Resource_2015_4_22.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="092.LS_2015_4_22.sql" ZBDb="ZBLS"/>
+  <FileUpgradeScript ScriptFileName="093.Common_2015_4_22.sql" ZBDb="ZBCommon"/>
+
+  <ReBuildUpgradeScript ZBDb="ZBWrongQues"/>
+
+  <FileUpgradeScript ScriptFileName="094.LS_2015_5_15.sql" ZBDb="ZBLS"/>
+
+  <FileUpgradeScript ScriptFileName="095.Common_2015_5_27.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="096.Learning_2015_6_2.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="097.Resource_2015_6_4.sql" ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="098.Resource_2015_6_19.sql" ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="099.Common_2015_8_28.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="100.TM_2015_9_23.sql" ZBDb="ZBTM"/>
+
+  <FileUpgradeScript ScriptFileName="101.Exam_2015_10_27.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="102.LS_2015_10_27.sql" ZBDb="ZBLS"/>
+
+
+  <FileUpgradeScript ScriptFileName="103.Resource_Mobile_2015_11_19.sql" ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="104.Learning_Mobile_2016_1_22.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="105.TMS_2016_3_2.sql" ZBDb="ZBTMS"/>
+
+  <FileUpgradeScript ScriptFileName="106.Exam_2016_7_4.sql" ZBDb="ZBExam"/>
+
+  <FileUpgradeScript ScriptFileName="107.Learning_2016_7_18.sql" ZBDb="ZBLearning"/>
+
+  <FileUpgradeScript ScriptFileName="108.Common_2016_8_11.sql" ZBDb="ZBCommon"/>
+  
+  <FileUpgradeScript ScriptFileName="109.Common_2016_11_3.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="110.Resource_2017_6_28.sql" ZBDb="ZBResource"/>
+
+  <FileUpgradeScript ScriptFileName="111.Common_2018_1_16.sql" ZBDb="ZBCommon"/>
+
+  <FileUpgradeScript ScriptFileName="112.Exam_2018_1_31.sql" ZBDb="ZBExam"/>
+
+  <FileUpgradeScript ScriptFileName="113.LS_2018_2_26.sql" ZBDb="ZBLS"/>
+  <FileUpgradeScript ScriptFileName="114.TMS_2018_5_28.sql" ZBDb="ZBTMS"/>
+  <FileUpgradeScript ScriptFileName="115.Common_2018_7_18.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="116.Exam_2018_9_3.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="117.TMS_2018_9_27.sql" ZBDb="ZBTMS"/>
+  <FileUpgradeScript ScriptFileName="118.Exam_2018_10_17.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="119.Resource_2018_11_6.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="120.LS_2018_11_7.sql" ZBDb="ZBLS"/>
+  <FileUpgradeScript ScriptFileName="121.Resource_2018_12_5.sql" ZBDb="ZBResource"/>
+  <FileUpgradeScript ScriptFileName="123.Common_2019_3_4.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="124.Exam_2019_3_15.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="125.Exam_2019_4_1.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="126.Exam_2019_4_2.sql" ZBDb="ZBExam"/>
+  <FileUpgradeScript ScriptFileName="127.LS_2019_4_19.sql" ZBDb="ZBLS"/>
+  <FileUpgradeScript ScriptFileName="128.Common_2019_4_26.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="129.Common_2019_5_23.sql" ZBDb="ZBCommon"/>
+  <FileUpgradeScript ScriptFileName="130.Resource_2019_6_6.sql" ZBDb="ZBResource"/>
+</UpgradeConfig>

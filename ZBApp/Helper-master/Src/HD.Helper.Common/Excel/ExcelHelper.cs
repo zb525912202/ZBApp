@@ -128,7 +128,7 @@ namespace HD.Helper.Common
             string TableStructStr = @"Create Table " + Table.TableName + "(";
 
             //连接字符串
-            string connString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0;";
+            string connString = @"Provider=Microsoft.ZB.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0;";
             OleDbConnection objConn = new OleDbConnection(connString);
 
             //创建表结构
@@ -307,7 +307,7 @@ namespace HD.Helper.Common
             string TableStructStr = @"Create Table " + Table.TableName + "(";
 
             //连接字符串
-            string connString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0;";
+            string connString = @"Provider=Microsoft.ZB.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0;";
             OleDbConnection objConn = new OleDbConnection(connString);
 
             //创建表结构
@@ -515,7 +515,7 @@ namespace HD.Helper.Common
             ArrayList TablesList = new ArrayList();
             if (File.Exists(ExcelFileName))
             {
-                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))
+                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ZB.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))
                 {
                     try
                     {
@@ -566,7 +566,7 @@ namespace HD.Helper.Common
             }
 
             DataTable table = new DataTable();
-            OleDbConnection dbcon = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0");
+            OleDbConnection dbcon = new OleDbConnection(@"Provider=Microsoft.ZB.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0");
             OleDbCommand cmd = new OleDbCommand("select * from [" + TableName + "$]", dbcon);
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
 
@@ -605,7 +605,7 @@ namespace HD.Helper.Common
             ArrayList ColsList = new ArrayList();
             if (File.Exists(ExcelFileName))
             {
-                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))
+                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ZB.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))
                 {
                     conn.Open();
                     dt = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns, new object[] { null, null, TableName, null });

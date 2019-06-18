@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQL>
+  <ReBuildDB>
+    <Transaction>
+      <SqlFileName FileName="InitDB.sql"/>
+      <SqlFileName FileName="CreateTable.Dic.sql"/>
+      <SqlFileName FileName="CreateTable.sql"/>
+      <SqlFileName FileName="CreateTable.Org.sql"/>
+      <SqlFileName FileName="CreateTable.Teacher.sql"/>
+      <SqlFileName FileName="CreateTable.Profession.sql"/>
+      <SqlFileName FileName="CreateTable.EmployeeCert.sql"/>
+      <SqlFileName FileName="CreateTable.PostStandard.sql"/>
+      <SqlFileName FileName="CreateTable.PostStandard.Info.Sql"/>
+      <SqlFileName FileName="View.PostStandard.Info.sql"/>
+      <SqlFileName FileName="View.sql"/>
+
+      <SqlFileName FileName="InitData.sql"/>
+      <SqlFileName FileName="InitData.Cert.sql"/>
+    </Transaction>
+  </ReBuildDB>
+
+  <ReBuildView>
+    <SqlFileName FileName="View.sql"/>
+    <SqlFileName FileName="View.PostStandard.Info.sql"/>
+    <SqlFileName FileName="View.Profession.sql"/>
+    
+    <SqlFileName FileName="Function.sql"/>
+  </ReBuildView>
+</SQL>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQL>
+  <ReBuildDB>
+    <Transaction>
+      <SqlFileName FileName="InitDB.sql"/>
+      <SqlFileName FileName="CreateTable.sql"/>
+      <SqlFileName FileName="CreateTable.LearningTask.sql"/>
+      <SqlFileName FileName="CreateTable.Required.sql"/>
+      <SqlFileName FileName="CreateTable.QuesTest.sql"/>
+      
+      <SqlFileName FileName="InitData.sql"/>
+
+      <SqlFileName FileName="View.Common.sql"/>
+      <SqlFileName FileName="View.Resource.sql"/>
+      <SqlFileName FileName="View.sql"/>
+    </Transaction>
+  </ReBuildDB>
+
+  <ReBuildView>
+    <SqlFileName FileName="View.Common.sql"/>
+    <SqlFileName FileName="View.Resource.sql"/>
+    <SqlFileName FileName="View.sql"/>
+  </ReBuildView>
+</SQL>

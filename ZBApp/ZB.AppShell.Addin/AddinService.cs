@@ -94,7 +94,7 @@ namespace ZB.AppShell.Addin
         #region ProcessExtensionNode
         private void ProcessExtensionNode(XDocument AddinTreeDoc)
         {
-            List<XElement> ExtensionNodes = AddinTreeDoc.XPathSelectElements("/Jet.AppShell.AddinTree/Extension").ToList();
+            List<XElement> ExtensionNodes = AddinTreeDoc.XPathSelectElements("/ZB.AppShell.AddinTree/Extension").ToList();
             foreach (XElement ExtensionNode in ExtensionNodes)
             {
                 string path = ExtensionNode.Attribute("path").Value;
@@ -332,7 +332,7 @@ namespace ZB.AppShell.Addin
                         this.ProcessExtensionNode(AddinTreeDoc);
                 }, () =>
                 {
-                    //AddinTreeNode definenode = AddinService.Instance.GetAddinTreeNode("/Jet/Definitions", true);
+                    //AddinTreeNode definenode = AddinService.Instance.GetAddinTreeNode("/ZB/Definitions", true);
                     //if (definenode != null)
                     //    definenode.BuildItems();
 

@@ -37,7 +37,7 @@ $provide.value("$locale", {
       "shtator",
       "tetor",
       "n\u00ebntor",
-      "dhjetor"
+      "dhZBor"
     ],
     "SHORTDAY": [
       "Die",
@@ -74,7 +74,7 @@ $provide.value("$locale", {
       "Shtator",
       "Tetor",
       "N\u00ebntor",
-      "Dhjetor"
+      "DhZBor"
     ],
     "WEEKENDRANGE": [
       5,

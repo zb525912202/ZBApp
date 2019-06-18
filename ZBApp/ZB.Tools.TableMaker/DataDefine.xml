@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Mapping>
+    <DataType Name="char              " CLRType="string   " DefaultValue="string.Empty" />
+    <DataType Name="nchar             " CLRType="string   " DefaultValue="string.Empty" />
+    <DataType Name="varchar           " CLRType="string   " DefaultValue="string.Empty" />
+    <DataType Name="nvarchar          " CLRType="string   " DefaultValue="string.Empty" />
+    <DataType Name="text              " CLRType="string   " DefaultValue="string.Empty" />
+    <DataType Name="int               " CLRType="int      " DefaultValue="0" />
+    <DataType Name="bigint            " CLRType="long     " DefaultValue="0" />
+    <DataType Name="float             " CLRType="double   " DefaultValue="0" />
+    <DataType Name="real              " CLRType="double   " DefaultValue="0" />
+    <DataType Name="image             " CLRType="byte[]   " DefaultValue="new byte[0]" />
+    <DataType Name="varbinary         " CLRType="byte[]   " DefaultValue="new byte[0]" />
+    <DataType Name="varbinary(max)    " CLRType="byte[]   " DefaultValue="new byte[0]" />
+    <DataType Name="datetime          " CLRType="DateTime " DefaultValue="DateTime.MinValue" />
+    <DataType Name="bit               " CLRType="bool     " DefaultValue="false" />
+    <DataType Name="numeric           " CLRType="int      " DefaultValue="0" />
+    <DataType Name="decimal           " CLRType="decimal  " DefaultValue="0" />
+    <DataType Name="ntext             " CLRType="string   " DefaultValue="string.Empty" />
+    <DataType Name="uniqueidentifier  " CLRType="string   " DefaultValue="string.Empty" />
+  </Mapping>
+</Items>

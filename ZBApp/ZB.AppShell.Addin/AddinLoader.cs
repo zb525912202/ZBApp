@@ -59,7 +59,7 @@ namespace ZB.AppShell.Addin
 
             XDocument AddinTreeDoc = XDocument.Load(addinfile.Path);
 
-            List<XElement> ImportNodes = AddinTreeDoc.XPathSelectElements("/Jet.AppShell.AddinTree/Runtime/Import").ToList();
+            List<XElement> ImportNodes = AddinTreeDoc.XPathSelectElements("/ZB.AppShell.AddinTree/Runtime/Import").ToList();
 
             List<Assembly> tempLoadedAssemblys = new List<Assembly>();
 

@@ -28,7 +28,7 @@ namespace ZB.AppShell.Addin
         {
             Dictionary<string, AppSettingGroup> temp = new Dictionary<string, AppSettingGroup>();
 
-            var AppSettingNode = AddinService.Instance.GetAddinTreeNode("/Jet/AppSetting",true);
+            var AppSettingNode = AddinService.Instance.GetAddinTreeNode("/ZB/AppSetting",true);
             if (AppSettingNode != null)
             {
                 var grouplist = AppSettingNode.BuildItems();

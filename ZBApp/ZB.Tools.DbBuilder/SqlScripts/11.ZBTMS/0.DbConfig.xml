@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQL>
+  <ReBuildDB description="电网">
+    <Transaction>
+      <SqlFileName FileName="InitDB.sql"/>
+
+      <SqlFileName FileName="CreateTable.Dic.sql"/>
+      <SqlFileName FileName="CreateTable.sql"/>
+
+      <SqlFileName FileName="CreateTable.TrainingWork.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingWork.Class.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingWork.Exam.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingWork.Bill.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingWork.Result.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingWork.CreditsRule.sql"/>
+
+      <SqlFileName FileName="InitData.sql"/>
+      <SqlFileName FileName="View.Common.sql"/>
+      <SqlFileName FileName="View.sql"/>
+      <SqlFileName FileName="View.MDV.sql"/>
+
+    </Transaction>
+  </ReBuildDB>
+
+  <ReBuildView>
+    <SqlFileName FileName="View.Common.sql"/>
+    <SqlFileName FileName="View.sql"/>
+    <SqlFileName FileName="View.MDV.sql"/>
+  </ReBuildView>
+</SQL>

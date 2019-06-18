@@ -35,7 +35,7 @@ namespace ZB.Framework.ObjectMapping
             this.TableDict.Clear();
             this.TableIdDict.Clear();
 
-            IList<TableExtend> list = (IList<TableExtend>)AddinService.Instance.GetAddinTreeNode("/Jet/TableExtend/Config").BuildItems(null, null, typeof(TableExtend));
+            IList<TableExtend> list = (IList<TableExtend>)AddinService.Instance.GetAddinTreeNode("/ZB/TableExtend/Config").BuildItems(null, null, typeof(TableExtend));
 
             foreach (var item in list)
             {
@@ -49,7 +49,7 @@ namespace ZB.Framework.ObjectMapping
         {
             using (var ds = new DatabaseScope().BeginTransaction())
             {
-                IList<SqlScript> list = (IList<SqlScript>)AddinService.Instance.GetAddinTreeNode("/Jet/TableExtend/DatabaseUpgradeScript").BuildItems(null, null, typeof(SqlScript));
+                IList<SqlScript> list = (IList<SqlScript>)AddinService.Instance.GetAddinTreeNode("/ZB/TableExtend/DatabaseUpgradeScript").BuildItems(null, null, typeof(SqlScript));
 
                 foreach (var item in list)
                 {

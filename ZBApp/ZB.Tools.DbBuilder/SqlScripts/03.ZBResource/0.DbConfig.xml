@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQL>
+	<ReBuildDB>
+		<Transaction>
+			<SqlFileName FileName="InitDB.sql"/>
+			<SqlFileName FileName="CreateTable.Ques.sql"/>
+			<SqlFileName FileName="CreateTable.Paper.sql"/>
+			<SqlFileName FileName="CreateTable.Media.sql"/>
+			<SqlFileName FileName="CreateTable.Standard.sql"/>
+      <SqlFileName FileName="CreateTable.AttachFile.sql"/>
+      <SqlFileName FileName="CreateTable.Module.sql"/>
+			<SqlFileName FileName="View.sql"/>
+			<SqlFileName FileName="InitData.sql"/>
+		</Transaction>
+		<NoTransaction>
+			<SqlFileName FileName="CreateTable.FullText.sql"/>
+		</NoTransaction>
+	</ReBuildDB>
+
+	<ReBuildView>
+		<SqlFileName FileName="View.sql"/>
+	</ReBuildView>
+</SQL>

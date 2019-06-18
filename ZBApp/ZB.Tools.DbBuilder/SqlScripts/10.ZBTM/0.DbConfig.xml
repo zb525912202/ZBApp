@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQL>
+  <ReBuildDB description="电网">
+    <Transaction>
+      <SqlFileName FileName="InitDB.sql"/>
+      
+      <SqlFileName FileName="CreateTable.Dic.sql"/>
+      <SqlFileName FileName="CreateTable.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingClass.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingExam.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingJudge.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingTask.sql"/>
+      <SqlFileName FileName="CreateTable.LearningOnlineTraining.sql"/>
+      
+      <SqlFileName FileName="View.Common.sql"/>
+      <SqlFileName FileName="View.MDV.sql"/>
+      <SqlFileName FileName="View.sql"/>
+      
+      <SqlFileName FileName="InitData.sql"/>
+      <SqlFileName FileName="InitData(电网).sql"/>
+    </Transaction>   
+  </ReBuildDB>
+
+  <ReBuildDB description="发电">
+    <Transaction>
+      <SqlFileName FileName="InitDB.sql"/>
+
+      <SqlFileName FileName="CreateTable.Dic.sql"/>
+      <SqlFileName FileName="CreateTable.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingClass.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingExam.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingJudge.sql"/>
+      <SqlFileName FileName="CreateTable.TrainingTask.sql"/>
+      <SqlFileName FileName="CreateTable.LearningOnlineTraining.sql"/>
+
+      <SqlFileName FileName="View.Common.sql"/>
+      <SqlFileName FileName="View.MDV.sql"/>
+      <SqlFileName FileName="View.sql"/>
+
+      <SqlFileName FileName="InitData.sql"/>
+      <SqlFileName FileName="InitData(发电).sql"/>
+    </Transaction>
+  </ReBuildDB>
+
+  <ReBuildView>
+    <SqlFileName FileName="View.Common.sql"/>
+    <SqlFileName FileName="View.MDV.sql"/>
+    <SqlFileName FileName="View.sql"/>
+  </ReBuildView>
+</SQL>

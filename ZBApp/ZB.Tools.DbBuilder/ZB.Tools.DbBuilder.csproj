@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F198F1D6-D53A-46FB-907B-DCF1F37FB342}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ZB.Tools.DbBuilder</RootNamespace>
+    <AssemblyName>ZB.Tools.DbBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnumDbBuilder.cs" />
+    <Compile Include="FrmCreateDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreateDb.designer.cs">
+      <DependentUpon>FrmCreateDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDbBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDbBuilder.designer.cs">
+      <DependentUpon>FrmDbBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ProcessHelper.cs" />
+    <Compile Include="Helper\RtfInfoHelper.cs" />
+    <Compile Include="ZBConfigChecker\ZBConfigCheckerBase.cs" />
+    <Compile Include="ZBDbManager\ZBDbManager.Connect.cs" />
+    <Compile Include="ZBDbManager\ZBDbManager.cs" />
+    <Compile Include="ZBDbManager\ZBDbManager.DbShrink.cs" />
+    <Compile Include="ZBDbManager\ZBDbManager.RebuildDb.cs" />
+    <Compile Include="ZBDbManager\ZBDbManager.RebuildView.cs" />
+    <Compile Include="ZBDbManager\ZBDbManager.Upgrade.cs" />
+    <Compile Include="ZBDbManager\ZBDbScript.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpgradeScript\DeptIndexScript.cs" />
+    <Compile Include="UpgradeScript\FileUpgradeScript.cs" />
+    <Compile Include="UpgradeScript\FixLearningTaskRuleScript.cs" />
+    <Compile Include="UpgradeScript\FixQFolderScript.cs" />
+    <Compile Include="UpgradeScript\LearningToDailyLogScript.cs" />
+    <Compile Include="UpgradeScript\ReBuildUpgradeScript.cs" />
+    <Compile Include="UpgradeScript\UpgradeScriptBase.cs" />
+    <EmbeddedResource Include="FrmCreateDb.resx">
+      <DependentUpon>FrmCreateDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDbBuilder.resx">
+      <DependentUpon>FrmDbBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+    <Content Include="SqlScripts\01.ZBLog\0.DbConfig.xml" />
+    <Content Include="SqlScripts\01.ZBLog\CreateTable.sql" />
+    <Content Include="SqlScripts\01.ZBLog\InitData.sql" />
+    <Content Include="SqlScripts\01.ZBLog\InitDB.sql" />
+    <Content Include="SqlScripts\01.ZBLog\View.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\0.DbConfig.xml" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.Dic.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.EmployeeCert.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.Org.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.PostStandard.Info.Sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.PostStandard.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.Profession.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\CreateTable.Teacher.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\Function.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\InitData.Cert.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\InitData.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\InitDB.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\Trigger.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\View.PostStandard.Info.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\View.Profession.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\View.sql" />
+    <Content Include="SqlScripts\02.ZBCommon\x.KillSpId.sql" />
+    <Content Include="SqlScripts\03.ZBResource\0.DbConfig.xml" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.AttachFile.sql" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.FullText.sql" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.Media.sql" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.Module.sql" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.Paper.sql" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.Ques.sql" />
+    <Content Include="SqlScripts\03.ZBResource\CreateTable.Standard.sql" />
+    <Content Include="SqlScripts\03.ZBResource\InitData.sql" />
+    <Content Include="SqlScripts\03.ZBResource\InitDB.sql" />
+    <Content Include="SqlScripts\03.ZBResource\View.sql" />
+    <Content Include="SqlScripts\04.ZBWrongQues\0.DbConfig.xml" />
+    <Content Include="SqlScripts\04.ZBWrongQues\CreateTable.sql" />
+    <Content Include="SqlScripts\04.ZBWrongQues\InitData.sql" />
+    <Content Include="SqlScripts\04.ZBWrongQues\InitDB.sql" />
+    <Content Include="SqlScripts\04.ZBWrongQues\View.sql" />
+    <Content Include="SqlScripts\05.ZBExam\0.DbConfig.xml" />
+    <Content Include="SqlScripts\05.ZBExam\CreateTable.Learning.sql" />
+    <Content Include="SqlScripts\05.ZBExam\CreateTable.sql" />
+    <Content Include="SqlScripts\05.ZBExam\InitData.sql" />
+    <Content Include="SqlScripts\05.ZBExam\InitDB.sql" />
+    <Content Include="SqlScripts\05.ZBExam\View.Common.sql" />
+    <Content Include="SqlScripts\05.ZBExam\View.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\0.DbConfig.xml" />
+    <Content Include="SqlScripts\06.ZBLearning\CreateTable.LearningTask.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\CreateTable.QuesTest.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\CreateTable.Required.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\CreateTable.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\InitData.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\InitDB.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\View.Common.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\View.Resource.sql" />
+    <Content Include="SqlScripts\06.ZBLearning\View.sql" />
+    <Content Include="SqlScripts\07.ZBDailyLog\0.DbConfig.xml" />
+    <Content Include="SqlScripts\07.ZBDailyLog\CreateTable.sql" />
+    <Content Include="SqlScripts\07.ZBDailyLog\CreateTable.Upgrade.sql" />
+    <Content Include="SqlScripts\07.ZBDailyLog\InitData.sql" />
+    <Content Include="SqlScripts\07.ZBDailyLog\InitDB.sql" />
+    <Content Include="SqlScripts\07.ZBDailyLog\View.Common.sql" />
+    <Content Include="SqlScripts\07.ZBDailyLog\View.sql" />
+    <Content Include="SqlScripts\08.ZBLS\0.DbConfig.xml" />
+    <Content Include="SqlScripts\08.ZBLS\CreateTable.Lesson.sql" />
+    <Content Include="SqlScripts\08.ZBLS\CreateTable.LessonStudyInfo.sql" />
+    <Content Include="SqlScripts\08.ZBLS\CreateTable.NetClass.sql" />
+    <Content Include="SqlScripts\08.ZBLS\CreateTable.NetClassStudyInfo.sql" />
+    <Content Include="SqlScripts\08.ZBLS\InitData.sql" />
+    <Content Include="SqlScripts\08.ZBLS\InitDB.sql" />
+    <Content Include="SqlScripts\08.ZBLS\View.Common.sql" />
+    <Content Include="SqlScripts\08.ZBLS\View.sql" />
+    <Content Include="SqlScripts\09.ZBVote\0.DbConfig.xml" />
+    <Content Include="SqlScripts\09.ZBVote\CreateTable.sql" />
+    <Content Include="SqlScripts\09.ZBVote\InitData.sql" />
+    <Content Include="SqlScripts\09.ZBVote\InitDB.sql" />
+    <Content Include="SqlScripts\09.ZBVote\View.sql" />
+    <Content Include="SqlScripts\10.ZBTM\0.DbConfig.xml" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.Dic.sql" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.LearningOnlineTraining.sql" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.sql" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.TrainingClass.sql" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.TrainingExam.sql" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.TrainingJudge.sql" />
+    <Content Include="SqlScripts\10.ZBTM\CreateTable.TrainingTask.sql" />
+    <Content Include="SqlScripts\10.ZBTM\InitData%28发电%29.sql" />
+    <Content Include="SqlScripts\10.ZBTM\InitData%28电网%29.sql" />
+    <Content Include="SqlScripts\10.ZBTM\InitData.sql" />
+    <Content Include="SqlScripts\10.ZBTM\InitDB.sql" />
+    <Content Include="SqlScripts\10.ZBTM\View.Common.sql" />
+    <Content Include="SqlScripts\10.ZBTM\View.MDV.sql" />
+    <Content Include="SqlScripts\10.ZBTM\View.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\0.DbConfig.xml" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.Dic.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.TrainingWork.Bill.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.TrainingWork.Class.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.TrainingWork.CreditsRule.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.TrainingWork.Exam.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.TrainingWork.Result.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\CreateTable.TrainingWork.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\InitData.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\InitDB.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\View.Common.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\View.MDV.sql" />
+    <Content Include="SqlScripts\11.ZBTMS\View.sql" />
+    <Content Include="SqlScripts\15.ZBHome\0.DbConfig.xml" />
+    <Content Include="SqlScripts\15.ZBHome\CreateTable.sql" />
+    <Content Include="SqlScripts\15.ZBHome\InitData.sql" />
+    <Content Include="SqlScripts\15.ZBHome\InitDB.sql" />
+    <Content Include="SqlScripts\15.ZBHome\View.sql" />
+    <Content Include="SqlScripts\16.ZBFiveStarEval\0.DbConfig.xml" />
+    <Content Include="SqlScripts\16.ZBFiveStarEval\CreateTable.sql" />
+    <Content Include="SqlScripts\16.ZBFiveStarEval\InitData.sql" />
+    <Content Include="SqlScripts\16.ZBFiveStarEval\InitDB.sql" />
+    <Content Include="SqlScripts\16.ZBFiveStarEval\View.Common.sql" />
+    <Content Include="SqlScripts\16.ZBFiveStarEval\View.sql" />
+    <Content Include="SqlScripts\30.ChaoHu\0.DbConfig.xml" />
+    <Content Include="SqlScripts\30.ChaoHu\CreateTable.sql" />
+    <Content Include="SqlScripts\30.ChaoHu\InitData.sql" />
+    <Content Include="SqlScripts\30.ChaoHu\InitDB.sql" />
+    <Content Include="SqlScripts\30.ChaoHu\View.Common.sql" />
+    <Content Include="SqlScripts\30.ChaoHu\View.sql" />
+    <Content Include="SqlScripts\ScriptConfig.xml" />
+    <Content Include="SqlScripts\ScriptUpgrade\0.DemoSql.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\0.UpgradeConfig.xml" />
+    <Content Include="SqlScripts\ScriptUpgrade\001.Resource_2012_6_12.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\002.Common_2012_6_21.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\003.Common_2012_6_26.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\004.Learning_2012_6_29.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\005.Common_2012_7_3.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\006.Resource_2012_7_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\007.Exam_2012_7_11.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\008.Learning_2012_7_30.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\009.Learning_2012_7_31.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\010.Resource_2012_8_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\011.Exam_2012_8_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\012.Learning_2012_8_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\013.Common_2012_8_6.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\014.Learning_2012_8_9.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\015.Resource_2012_8_9.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\016.Learning_2012_8_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\017.Common_2012_8_15.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\018.Resource_2012_8_17.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\019.Common_2012_8_20.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\020.Learning_2012_8_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\021.Resource_2012_8_30.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\022.Common_2012_9_8.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\023.Resource_2012_9_11.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\024.Learning_2012_9_14.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\025.Learning_2012_11_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\026.Common_2012_11_9.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\027.Learning_2012_11_9.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\028.Common_2012_11_15.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\030.Resource_2012_11_19.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\031.Common_2012_11_24.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\032.Common_2012_11_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\033.Resource_2012_11_28.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\034.Exam_2012_12_26.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\035.Learning_2012_12_28.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\036.Common_2013_1_5.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\038.Common_2013_1_14.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\039.Exam_2013_1_14.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\040.Common_2013_1_15.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\041.Common_2013_1_21.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\042.Learning_2013_1_24.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\043.Common_2013_2_25.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\044.Resource_2013_4_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\045.Common_2013_4_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\046.Common_2013_5_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\047.Resource_2013_5_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\048.Exam_2013_5_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\049.Learning_2013_5_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\050.Learning_2013_5_23.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\051.Learning_2013_5_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\052.Learning_2013_5_28.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\053.Exam_2013_6_3.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\054.Common_2013_6_17.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\055.LearningToDailyLog_2013_6_18.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\056.Exam_2013_7_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\057.Common_2013_7_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\058.Vote_2013_7_8.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\059.Resource_2013_12_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\060.Exam_2013_12_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\061.Learning_2013_12_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\062.Resource_2013_12_12.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\063.Exam_2013_12_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\064.Learning_2014_1_17.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\065.Common_2014_1_21.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\066.Exam_2014_2_11.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\067.Exam_2014_2_21.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\068.Exam_2014_2_24.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\069.Exam_2014_2_26.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\070.Exam_2014_3_4.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\071.Common_2014_3_6.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\072.Exam_2014_3_11.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\072.Resource_2014_3_7.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\073.Exam_2014_3_24.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\074.Exam_2014_3_25.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\075.Common_2014_4_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\076.Common_2014_5_4.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\077.Common_2014_5_9.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\078.Learning_2014_6_9.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\079.DailyLog_2014_7_1.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\080.Learning_2014_7_11.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\081.Exam_2014_7_15.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\082.Resource_2014_7_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\083.Exam_2014_9_10.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\084.Common_2014_11_3.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\085.Learning_2015_1_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\086.Learning_2015_1_29.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\087.Common_2015_2_3.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\088.Common_2015_3_5.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\089.Common_2015_3_13.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\090.Learning_2015_4_1.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\091.Resource_2015_4_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\092.LS_2015_4_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\093.Common_2015_4_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\094.LS_2015_5_15.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\095.Common_2015_5_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\096.Learning_2015_6_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\097.Resource_2015_6_4.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\098.Resource_2015_6_19.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\099.Common_2015_8_28.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\100.TM_2015_9_23.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\101.Exam_2015_10_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\102.LS_2015_10_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\103.Resource_Mobile_2015_11_19.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\104.Learning_Mobile_2016_1_22.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\105.TMS_2016_3_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\106.Exam_2016_7_4.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\107.Learning_2016_7_18.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\108.Common_2016_8_11.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\109.Common_2016_11_3.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\110.Resource_2017_6_28.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\111.Common_2018_1_16.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\112.Exam_2018_1_31.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\113.LS_2018_2_26.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\114.TMS_2018_5_28.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\115.Common_2018_7_18.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\116.Exam_2018_9_3.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\117.TMS_2018_9_27.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\118.Exam_2018_10_17.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\119.Resource_2018_11_6.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\120.LS_2018_11_7.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\121.Resource_2018_12_5.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\122.Resource_2019_1_17.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\123.Common_2019_3_4.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\124.Exam_2019_3_15.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\125.Exam_2019_4_1.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\126.Exam_2019_4_2.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\127.LS_2019_4_19.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\128.Common_2019_4_26.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\129.Common_2019_5_23.sql" />
+    <Content Include="SqlScripts\ScriptUpgrade\130.Resource_2019_6_6.sql" />
+    <Content Include="SqlScripts\x.ClearAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZB.Framework.ObjectMapping\ZB.Framework.ObjectMapping.csproj">
+      <Project>{25621f8f-da2d-457d-aae2-8523630c8152}</Project>
+      <Name>ZB.Framework.ObjectMapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZB.Framework.Utility\ZB.Framework.Utility.csproj">
+      <Project>{4bcfbf52-ecf2-4895-8716-2bf8b68651e2}</Project>
+      <Name>ZB.Framework.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

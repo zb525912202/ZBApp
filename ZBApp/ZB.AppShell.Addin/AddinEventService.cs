@@ -34,7 +34,7 @@ namespace ZB.AppShell.Addin
 
         internal void Init()
         {
-            AddinTreeNode addinnode = AddinService.Instance.GetAddinTreeNode("/Jet/RegisteredGlobalEvents",true);
+            AddinTreeNode addinnode = AddinService.Instance.GetAddinTreeNode("/ZB/RegisteredGlobalEvents",true);
             if(addinnode != null)
                 addinnode.BuildItems(RegisteredGlobalEvents, null);
         }

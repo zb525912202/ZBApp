@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQL>
+  <ReBuildDB>
+    <Transaction>
+      <SqlFileName FileName="InitDB.sql"/>
+      
+      <SqlFileName FileName="CreateTable.Lesson.sql"/>
+      <SqlFileName FileName="CreateTable.LessonStudyInfo.sql"/>
+      <SqlFileName FileName="CreateTable.NetClass.sql"/>
+      <SqlFileName FileName="CreateTable.NetClassStudyInfo.sql"/>
+      
+      <SqlFileName FileName="View.Common.sql"/>
+      <SqlFileName FileName="View.sql"/>
+      <SqlFileName FileName="InitData.sql"/>
+    </Transaction>
+  </ReBuildDB>
+
+  <ReBuildView>
+    <SqlFileName FileName="View.Common.sql"/>
+    <SqlFileName FileName="View.sql"/>
+  </ReBuildView>
+</SQL>
