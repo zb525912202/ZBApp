@@ -66,7 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Js\CheckFunction.js" />
-    <Content Include="Js\CommonJS.js" />
+    <Content Include="Js\HDCommonJS.Extend.js" />
+    <Content Include="Js\HDCommonJS.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

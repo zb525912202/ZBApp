@@ -1,0 +1,45 @@
+﻿<#@ template language="C#" hostspecific="True" debug="false"#>
+<#@include file="$(ProjectDir)Manager.ttinclude"#>
+<#@include file="$(ProjectDir)DbHelper.ttinclude"#>
+<#@include file="$(ProjectDir)config.ttinclude"#>
+
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Data.DataSetExtensions" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+<#
+		//你的当前model的命名空间
+            string NameSpace="ZB.Common.DAL";
+			string suffix="DAL";
+			List<DbTable> tables = DbHelper.GetDbTables(config.ConnectionString,config.CommonDatabase);
+            foreach (var table in tables)
+            {
+				
+				 manager.StartNewFile(table.TableName +suffix+".cs");
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ZB.Business.DALBase;
+using ZB.Common.Data;
+using ZB.Common.IDAL;
+
+namespace  <#=NameSpace#>
+{
+	public partial class <#=table.TableName+suffix#>:DALBase<<#= table.TableName #>, int>, I<#=table.TableName  #>DAL<<#= table.TableName #>, int>
+	{
+
+
+	}
+}
+
+<#manager.EndBlock();#>
+<#}#>
+
+<# manager.Process(true); #>

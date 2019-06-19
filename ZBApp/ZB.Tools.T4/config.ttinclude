@@ -1,0 +1,10 @@
+﻿<#+
+    public class config
+    {
+        public static readonly string ConnectionString="Data Source=192.168.1.8\\sql2012;Initial Catalog=JetCommon_D;User ID=sa;Password=jetmaster;MultipleActiveResultSets=True;";
+        
+		public static readonly string CommonDatabase="JetCommon_D";
+		public static readonly string ResourceDatabase="JetResource_D";
+		public static readonly string ExamDatabase="JetExam_D";
+    }
+#>

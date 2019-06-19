@@ -69,10 +69,6 @@
       <Project>{13CEA70D-5A0A-4002-8A8A-5803EBB43423}</Project>
       <Name>ZB.Business.DALBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ZB.Business.DAL\ZB.Common.DAL.csproj">
-      <Project>{e75457ab-22e9-43a5-902d-7cae14eae323}</Project>
-      <Name>ZB.Common.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ZB.Common.Data\ZB.Common.Data.csproj">
       <Project>{1520a983-11cb-4469-9360-f05a19c0fb99}</Project>
       <Name>ZB.Common.Data</Name>
